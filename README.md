@@ -12,5 +12,3 @@ npm run dev
 ```
 
 Open the URL shown (e.g. http://localhost:5173). Use the object list to focus the camera on a star or planet.
-
-
