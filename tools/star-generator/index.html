@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Generator</title>
+    <style>
+      :root {
+        --bg: #0a0c18;
+        --panel: rgba(10, 12, 24, 0.92);
+        --text: #c8d4e8;
+        --muted: rgba(200, 212, 232, 0.72);
+        --border: rgba(120, 140, 200, 0.28);
+        --accent: #50a7ff;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); }
+      #root { height: 100%; }
+      a { color: var(--accent); }
+      input, select, button, textarea { font: inherit; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

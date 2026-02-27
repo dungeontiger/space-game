@@ -1,0 +1,5714 @@
+[
+  {
+    "id": "__generator__",
+    "type": "meta",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "name": "Generator",
+    "generator": {
+      "tool": "star-generator",
+      "version": 1,
+      "generatedAt": "2026-02-26T17:48:42.848Z",
+      "params": {
+        "seed": "space-game",
+        "diameterLy": 1000,
+        "maxSystems": 200,
+        "algorithm": "clustered",
+        "pct1": 60,
+        "pct2": 30,
+        "pct3": 5,
+        "pct4": 4,
+        "pct5": 1,
+        "clusterCount": 6,
+        "clusterSigmaLy": 1,
+        "backgroundFraction": 0.25,
+        "diskScaleLengthLy": 1,
+        "diskScaleHeightLy": 1,
+        "maxStars": 2000
+      },
+      "systemCount": 200,
+      "starCount": 298
+    }
+  },
+  {
+    "id": "system-1",
+    "type": "system",
+    "name": "Mornar System",
+    "position": {
+      "x": 367.902,
+      "y": 136.346,
+      "z": 378.821
+    },
+    "stars": [
+      {
+        "id": "system-1-star-1",
+        "name": "Xeka",
+        "position": {
+          "x": 367.902,
+          "y": 136.346,
+          "z": 378.821
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-2",
+    "type": "system",
+    "name": "Nardenqua System",
+    "position": {
+      "x": 193.549,
+      "y": 329.881,
+      "z": -322.962
+    },
+    "stars": [
+      {
+        "id": "system-2-star-1",
+        "name": "Voror-B",
+        "position": {
+          "x": 193.565,
+          "y": 329.882,
+          "z": -322.95
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-2-star-2",
+        "name": "Xebel",
+        "position": {
+          "x": 193.532,
+          "y": 329.881,
+          "z": -322.974
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-3",
+    "type": "system",
+    "name": "Ulkelran System",
+    "position": {
+      "x": 56.87,
+      "y": -472.34,
+      "z": 377.693
+    },
+    "stars": [
+      {
+        "id": "system-3-star-1",
+        "name": "Ulen-M",
+        "position": {
+          "x": 56.87,
+          "y": -472.34,
+          "z": 377.693
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-4",
+    "type": "system",
+    "name": "Zenal System",
+    "position": {
+      "x": 367.801,
+      "y": 135.617,
+      "z": 377.169
+    },
+    "stars": [
+      {
+        "id": "system-4-star-1",
+        "name": "Phahal",
+        "position": {
+          "x": 367.802,
+          "y": 135.604,
+          "z": 377.161
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-4-star-2",
+        "name": "Yorselzen",
+        "position": {
+          "x": 367.799,
+          "y": 135.63,
+          "z": 377.177
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-5",
+    "type": "system",
+    "name": "Elnar System",
+    "position": {
+      "x": 57.671,
+      "y": -473.179,
+      "z": 376.676
+    },
+    "stars": [
+      {
+        "id": "system-5-star-1",
+        "name": "Ionar",
+        "position": {
+          "x": 57.675,
+          "y": -473.172,
+          "z": 376.689
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-5-star-2",
+        "name": "Arar",
+        "position": {
+          "x": 57.666,
+          "y": -473.187,
+          "z": 376.663
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-6",
+    "type": "system",
+    "name": "Tansel-F System",
+    "position": {
+      "x": -465.412,
+      "y": 334.764,
+      "z": 220.802
+    },
+    "stars": [
+      {
+        "id": "system-6-star-1",
+        "name": "Fivorgar",
+        "position": {
+          "x": -465.412,
+          "y": 334.764,
+          "z": 220.802
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-7",
+    "type": "system",
+    "name": "Enio System",
+    "position": {
+      "x": -251.796,
+      "y": -193.564,
+      "z": 246.54
+    },
+    "stars": [
+      {
+        "id": "system-7-star-1",
+        "name": "Phaioor",
+        "position": {
+          "x": -251.796,
+          "y": -193.564,
+          "z": 246.54
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-8",
+    "type": "system",
+    "name": "Rantan System",
+    "position": {
+      "x": 202.506,
+      "y": -366.866,
+      "z": -294.015
+    },
+    "stars": [
+      {
+        "id": "system-8-star-1",
+        "name": "Ancor-P",
+        "position": {
+          "x": 202.506,
+          "y": -366.866,
+          "z": -294.015
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-9",
+    "type": "system",
+    "name": "Garlin System",
+    "position": {
+      "x": 56.406,
+      "y": -472.845,
+      "z": 374.931
+    },
+    "stars": [
+      {
+        "id": "system-9-star-1",
+        "name": "Yoralar",
+        "position": {
+          "x": 56.411,
+          "y": -472.836,
+          "z": 374.928
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-9-star-2",
+        "name": "Daxeran-Q",
+        "position": {
+          "x": 56.401,
+          "y": -472.854,
+          "z": 374.933
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-10",
+    "type": "system",
+    "name": "Zenlinqua System",
+    "position": {
+      "x": -379.883,
+      "y": 80.639,
+      "z": 291.3
+    },
+    "stars": [
+      {
+        "id": "system-10-star-1",
+        "name": "Enkazen",
+        "position": {
+          "x": -379.873,
+          "y": 80.636,
+          "z": 291.293
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-10-star-2",
+        "name": "Zenfivor",
+        "position": {
+          "x": -379.893,
+          "y": 80.642,
+          "z": 291.307
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-11",
+    "type": "system",
+    "name": "Phaelan System",
+    "position": {
+      "x": -252.41,
+      "y": -192.058,
+      "z": 247.427
+    },
+    "stars": [
+      {
+        "id": "system-11-star-1",
+        "name": "Tanbelyor",
+        "position": {
+          "x": -252.408,
+          "y": -192.073,
+          "z": 247.428
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-11-star-2",
+        "name": "Narquawen",
+        "position": {
+          "x": -252.412,
+          "y": -192.043,
+          "z": 247.425
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-12",
+    "type": "system",
+    "name": "Vorulen System",
+    "position": {
+      "x": -243.159,
+      "y": -14.102,
+      "z": 440.246
+    },
+    "stars": [
+      {
+        "id": "system-12-star-1",
+        "name": "Seldazen",
+        "position": {
+          "x": -243.175,
+          "y": -14.118,
+          "z": 440.241
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-12-star-2",
+        "name": "Elan",
+        "position": {
+          "x": -243.144,
+          "y": -14.086,
+          "z": 440.252
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-13",
+    "type": "system",
+    "name": "Ornaren System",
+    "position": {
+      "x": 369.078,
+      "y": 135.935,
+      "z": 377.685
+    },
+    "stars": [
+      {
+        "id": "system-13-star-1",
+        "name": "Ulbel",
+        "position": {
+          "x": 369.07,
+          "y": 135.948,
+          "z": 377.692
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-13-star-2",
+        "name": "Daul",
+        "position": {
+          "x": 369.069,
+          "y": 135.921,
+          "z": 377.691
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-13-star-3",
+        "name": "Wenhal",
+        "position": {
+          "x": 369.083,
+          "y": 135.943,
+          "z": 377.682
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-13-star-4",
+        "name": "Ioyor-Y",
+        "position": {
+          "x": 369.087,
+          "y": 135.933,
+          "z": 377.671
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-13-star-5",
+        "name": "Wenzen",
+        "position": {
+          "x": 369.08,
+          "y": 135.931,
+          "z": 377.69
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-14",
+    "type": "system",
+    "name": "Garsel System",
+    "position": {
+      "x": -254.379,
+      "y": -192.495,
+      "z": 246.961
+    },
+    "stars": [
+      {
+        "id": "system-14-star-1",
+        "name": "Quatanla-M",
+        "position": {
+          "x": -254.379,
+          "y": -192.495,
+          "z": 246.961
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-15",
+    "type": "system",
+    "name": "Aldenbel System",
+    "position": {
+      "x": -146.229,
+      "y": 117.552,
+      "z": -287.423
+    },
+    "stars": [
+      {
+        "id": "system-15-star-1",
+        "name": "Rancor",
+        "position": {
+          "x": -146.229,
+          "y": 117.552,
+          "z": -287.423
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-16",
+    "type": "system",
+    "name": "Garulyor System",
+    "position": {
+      "x": -394.847,
+      "y": -424.102,
+      "z": -121.938
+    },
+    "stars": [
+      {
+        "id": "system-16-star-1",
+        "name": "Alyorqua",
+        "position": {
+          "x": -394.847,
+          "y": -424.102,
+          "z": -121.938
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-17",
+    "type": "system",
+    "name": "Fien System",
+    "position": {
+      "x": 369.017,
+      "y": 135.692,
+      "z": 376.033
+    },
+    "stars": [
+      {
+        "id": "system-17-star-1",
+        "name": "Elquaal",
+        "position": {
+          "x": 369.012,
+          "y": 135.701,
+          "z": 376.019
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-17-star-2",
+        "name": "Zenvorbe-M",
+        "position": {
+          "x": 369.021,
+          "y": 135.682,
+          "z": 376.047
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-18",
+    "type": "system",
+    "name": "Kelel System",
+    "position": {
+      "x": 300.025,
+      "y": -233.488,
+      "z": -497.794
+    },
+    "stars": [
+      {
+        "id": "system-18-star-1",
+        "name": "Dakel-S",
+        "position": {
+          "x": 300.023,
+          "y": -233.495,
+          "z": -497.789
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-18-star-2",
+        "name": "Naryor",
+        "position": {
+          "x": 300.027,
+          "y": -233.481,
+          "z": -497.799
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-19",
+    "type": "system",
+    "name": "Ordenkel System",
+    "position": {
+      "x": -254.32,
+      "y": -192.268,
+      "z": 248.796
+    },
+    "stars": [
+      {
+        "id": "system-19-star-1",
+        "name": "Xearbel",
+        "position": {
+          "x": -254.32,
+          "y": -192.268,
+          "z": 248.796
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-20",
+    "type": "system",
+    "name": "Beyor System",
+    "position": {
+      "x": -168.783,
+      "y": -5.183,
+      "z": -67.708
+    },
+    "stars": [
+      {
+        "id": "system-20-star-1",
+        "name": "Eldenan",
+        "position": {
+          "x": -168.795,
+          "y": -5.185,
+          "z": -67.695
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-20-star-2",
+        "name": "Lalin",
+        "position": {
+          "x": -168.771,
+          "y": -5.181,
+          "z": -67.722
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-21",
+    "type": "system",
+    "name": "Wenwen System",
+    "position": {
+      "x": 55.429,
+      "y": -473.549,
+      "z": 377.519
+    },
+    "stars": [
+      {
+        "id": "system-21-star-1",
+        "name": "Artan-V",
+        "position": {
+          "x": 55.429,
+          "y": -473.549,
+          "z": 377.519
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-22",
+    "type": "system",
+    "name": "Labefi System",
+    "position": {
+      "x": -362.073,
+      "y": 238.105,
+      "z": -134.717
+    },
+    "stars": [
+      {
+        "id": "system-22-star-1",
+        "name": "Dayorfi",
+        "position": {
+          "x": -362.064,
+          "y": 238.107,
+          "z": -134.731
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-22-star-2",
+        "name": "Garranar",
+        "position": {
+          "x": -362.094,
+          "y": 238.111,
+          "z": -134.7
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-22-star-3",
+        "name": "Garanda",
+        "position": {
+          "x": -362.067,
+          "y": 238.107,
+          "z": -134.712
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-22-star-4",
+        "name": "Kafi-F",
+        "position": {
+          "x": -362.069,
+          "y": 238.094,
+          "z": -134.727
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-23",
+    "type": "system",
+    "name": "Iofi System",
+    "position": {
+      "x": -469.003,
+      "y": 124.092,
+      "z": -111.706
+    },
+    "stars": [
+      {
+        "id": "system-23-star-1",
+        "name": "Orkelkel",
+        "position": {
+          "x": -469.003,
+          "y": 124.092,
+          "z": -111.706
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-24",
+    "type": "system",
+    "name": "Kelmor System",
+    "position": {
+      "x": -459.237,
+      "y": -439.304,
+      "z": 378.445
+    },
+    "stars": [
+      {
+        "id": "system-24-star-1",
+        "name": "Lafi",
+        "position": {
+          "x": -459.237,
+          "y": -439.304,
+          "z": 378.445
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-25",
+    "type": "system",
+    "name": "Narallin-Z System",
+    "position": {
+      "x": -189.663,
+      "y": 474.55,
+      "z": 156.255
+    },
+    "stars": [
+      {
+        "id": "system-25-star-1",
+        "name": "Rannarsel",
+        "position": {
+          "x": -189.662,
+          "y": 474.54,
+          "z": 156.264
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-25-star-2",
+        "name": "Orphanar",
+        "position": {
+          "x": -189.664,
+          "y": 474.56,
+          "z": 156.245
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-26",
+    "type": "system",
+    "name": "Selelyor System",
+    "position": {
+      "x": -169.643,
+      "y": -5.385,
+      "z": -66.681
+    },
+    "stars": [
+      {
+        "id": "system-26-star-1",
+        "name": "Yorul",
+        "position": {
+          "x": -169.643,
+          "y": -5.385,
+          "z": -66.681
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-27",
+    "type": "system",
+    "name": "Laden System",
+    "position": {
+      "x": -253.3,
+      "y": -193.855,
+      "z": 250.135
+    },
+    "stars": [
+      {
+        "id": "system-27-star-1",
+        "name": "Katanal",
+        "position": {
+          "x": -253.3,
+          "y": -193.855,
+          "z": 250.135
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-28",
+    "type": "system",
+    "name": "Alla System",
+    "position": {
+      "x": -170.918,
+      "y": -3.6,
+      "z": -67.864
+    },
+    "stars": [
+      {
+        "id": "system-28-star-1",
+        "name": "Phaka",
+        "position": {
+          "x": -170.918,
+          "y": -3.6,
+          "z": -67.864
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-29",
+    "type": "system",
+    "name": "Rankel System",
+    "position": {
+      "x": -43.15,
+      "y": -108.204,
+      "z": 394.02
+    },
+    "stars": [
+      {
+        "id": "system-29-star-1",
+        "name": "Morar",
+        "position": {
+          "x": -43.15,
+          "y": -108.204,
+          "z": 394.02
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-30",
+    "type": "system",
+    "name": "Bean System",
+    "position": {
+      "x": -168.437,
+      "y": -3.11,
+      "z": -65.71
+    },
+    "stars": [
+      {
+        "id": "system-30-star-1",
+        "name": "Fiquawen",
+        "position": {
+          "x": -168.428,
+          "y": -3.125,
+          "z": -65.718
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-30-star-2",
+        "name": "Halcor",
+        "position": {
+          "x": -168.446,
+          "y": -3.096,
+          "z": -65.703
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-31",
+    "type": "system",
+    "name": "Vorbel System",
+    "position": {
+      "x": 365.538,
+      "y": -22.66,
+      "z": -438.823
+    },
+    "stars": [
+      {
+        "id": "system-31-star-1",
+        "name": "Moren",
+        "position": {
+          "x": 365.538,
+          "y": -22.66,
+          "z": -438.823
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-32",
+    "type": "system",
+    "name": "Iokel System",
+    "position": {
+      "x": 194.405,
+      "y": -20.832,
+      "z": -96.449
+    },
+    "stars": [
+      {
+        "id": "system-32-star-1",
+        "name": "Ulelal",
+        "position": {
+          "x": 194.405,
+          "y": -20.832,
+          "z": -96.449
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-33",
+    "type": "system",
+    "name": "Corkaan System",
+    "position": {
+      "x": 368.975,
+      "y": 137.296,
+      "z": 379.43
+    },
+    "stars": [
+      {
+        "id": "system-33-star-1",
+        "name": "Eliolin",
+        "position": {
+          "x": 368.975,
+          "y": 137.296,
+          "z": 379.43
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-34",
+    "type": "system",
+    "name": "Vorwen System",
+    "position": {
+      "x": -394.029,
+      "y": -99.936,
+      "z": -393.22
+    },
+    "stars": [
+      {
+        "id": "system-34-star-1",
+        "name": "Ulxe-B",
+        "position": {
+          "x": -394.029,
+          "y": -99.926,
+          "z": -393.231
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-34-star-2",
+        "name": "Bewen",
+        "position": {
+          "x": -394.03,
+          "y": -99.947,
+          "z": -393.208
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-35",
+    "type": "system",
+    "name": "Halbel System",
+    "position": {
+      "x": -251.882,
+      "y": -191.213,
+      "z": 248.48
+    },
+    "stars": [
+      {
+        "id": "system-35-star-1",
+        "name": "Lada",
+        "position": {
+          "x": -251.873,
+          "y": -191.225,
+          "z": 248.492
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-35-star-2",
+        "name": "Alyor",
+        "position": {
+          "x": -251.891,
+          "y": -191.202,
+          "z": 248.468
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-36",
+    "type": "system",
+    "name": "Fiselen System",
+    "position": {
+      "x": 374.601,
+      "y": -15.643,
+      "z": -181.338
+    },
+    "stars": [
+      {
+        "id": "system-36-star-1",
+        "name": "Alennar",
+        "position": {
+          "x": 374.612,
+          "y": -15.63,
+          "z": -181.339
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-36-star-2",
+        "name": "Denyor",
+        "position": {
+          "x": 374.589,
+          "y": -15.657,
+          "z": -181.338
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-37",
+    "type": "system",
+    "name": "Mormor System",
+    "position": {
+      "x": 466.709,
+      "y": -143.741,
+      "z": -394.737
+    },
+    "stars": [
+      {
+        "id": "system-37-star-1",
+        "name": "Tanzenden",
+        "position": {
+          "x": 466.709,
+          "y": -143.741,
+          "z": -394.737
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-38",
+    "type": "system",
+    "name": "Ulmor System",
+    "position": {
+      "x": -82.905,
+      "y": 138.967,
+      "z": 30.574
+    },
+    "stars": [
+      {
+        "id": "system-38-star-1",
+        "name": "Belalran",
+        "position": {
+          "x": -82.911,
+          "y": 138.982,
+          "z": 30.574
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-38-star-2",
+        "name": "Halwenla-Q",
+        "position": {
+          "x": -82.9,
+          "y": 138.951,
+          "z": 30.573
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-39",
+    "type": "system",
+    "name": "Kelal System",
+    "position": {
+      "x": -169.8,
+      "y": -3.106,
+      "z": -64.81
+    },
+    "stars": [
+      {
+        "id": "system-39-star-1",
+        "name": "Morpha",
+        "position": {
+          "x": -169.803,
+          "y": -3.097,
+          "z": -64.809
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-39-star-2",
+        "name": "Ulxe",
+        "position": {
+          "x": -169.798,
+          "y": -3.116,
+          "z": -64.812
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-40",
+    "type": "system",
+    "name": "Orphatan-J System",
+    "position": {
+      "x": 367.334,
+      "y": 135.238,
+      "z": 375.945
+    },
+    "stars": [
+      {
+        "id": "system-40-star-1",
+        "name": "Kelcor",
+        "position": {
+          "x": 367.334,
+          "y": 135.238,
+          "z": 375.945
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-41",
+    "type": "system",
+    "name": "Angarlin System",
+    "position": {
+      "x": 119.699,
+      "y": 137.938,
+      "z": 294.855
+    },
+    "stars": [
+      {
+        "id": "system-41-star-1",
+        "name": "Besel",
+        "position": {
+          "x": 119.699,
+          "y": 137.938,
+          "z": 294.855
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-42",
+    "type": "system",
+    "name": "Xeio System",
+    "position": {
+      "x": -253.87,
+      "y": -193.7,
+      "z": 248.916
+    },
+    "stars": [
+      {
+        "id": "system-42-star-1",
+        "name": "Narbeio",
+        "position": {
+          "x": -253.872,
+          "y": -193.702,
+          "z": 248.908
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-42-star-2",
+        "name": "Ellavor",
+        "position": {
+          "x": -253.871,
+          "y": -193.714,
+          "z": 248.928
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-42-star-3",
+        "name": "Morlinxe-I",
+        "position": {
+          "x": -253.857,
+          "y": -193.695,
+          "z": 248.924
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-42-star-4",
+        "name": "Xelin",
+        "position": {
+          "x": -253.878,
+          "y": -193.69,
+          "z": 248.902
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-43",
+    "type": "system",
+    "name": "Ella System",
+    "position": {
+      "x": -252.461,
+      "y": -192.897,
+      "z": 246.439
+    },
+    "stars": [
+      {
+        "id": "system-43-star-1",
+        "name": "Iocor",
+        "position": {
+          "x": -252.461,
+          "y": -192.897,
+          "z": 246.439
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-44",
+    "type": "system",
+    "name": "Fialpha System",
+    "position": {
+      "x": 193.949,
+      "y": 328.711,
+      "z": -322.169
+    },
+    "stars": [
+      {
+        "id": "system-44-star-1",
+        "name": "Danar",
+        "position": {
+          "x": 193.949,
+          "y": 328.711,
+          "z": -322.169
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-45",
+    "type": "system",
+    "name": "Phawencor System",
+    "position": {
+      "x": 368.87,
+      "y": 135.471,
+      "z": 379.202
+    },
+    "stars": [
+      {
+        "id": "system-45-star-1",
+        "name": "Quanar",
+        "position": {
+          "x": 368.868,
+          "y": 135.467,
+          "z": 379.19
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-45-star-2",
+        "name": "Vornaran",
+        "position": {
+          "x": 368.868,
+          "y": 135.471,
+          "z": 379.203
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-45-star-3",
+        "name": "Andalin",
+        "position": {
+          "x": 368.873,
+          "y": 135.475,
+          "z": 379.214
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-46",
+    "type": "system",
+    "name": "Morvor-I System",
+    "position": {
+      "x": 56.283,
+      "y": -473.249,
+      "z": 377.571
+    },
+    "stars": [
+      {
+        "id": "system-46-star-1",
+        "name": "Yorgar",
+        "position": {
+          "x": 56.283,
+          "y": -473.249,
+          "z": 377.571
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-47",
+    "type": "system",
+    "name": "Laar System",
+    "position": {
+      "x": 250.672,
+      "y": 162.064,
+      "z": 144.855
+    },
+    "stars": [
+      {
+        "id": "system-47-star-1",
+        "name": "Mordenal",
+        "position": {
+          "x": 250.672,
+          "y": 162.064,
+          "z": 144.855
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-48",
+    "type": "system",
+    "name": "Halcor System",
+    "position": {
+      "x": 250.788,
+      "y": 163.126,
+      "z": 143.352
+    },
+    "stars": [
+      {
+        "id": "system-48-star-1",
+        "name": "Ulphaen",
+        "position": {
+          "x": 250.801,
+          "y": 163.121,
+          "z": 143.348
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-48-star-2",
+        "name": "Yorka",
+        "position": {
+          "x": 250.774,
+          "y": 163.13,
+          "z": 143.356
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-49",
+    "type": "system",
+    "name": "Xelin System",
+    "position": {
+      "x": 368.977,
+      "y": 134.094,
+      "z": 378.325
+    },
+    "stars": [
+      {
+        "id": "system-49-star-1",
+        "name": "Quaallin",
+        "position": {
+          "x": 368.985,
+          "y": 134.094,
+          "z": 378.326
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-49-star-2",
+        "name": "Denkel",
+        "position": {
+          "x": 368.964,
+          "y": 134.092,
+          "z": 378.315
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-49-star-3",
+        "name": "Orquasel",
+        "position": {
+          "x": 368.964,
+          "y": 134.107,
+          "z": 378.324
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-49-star-4",
+        "name": "Yorselnar",
+        "position": {
+          "x": 368.996,
+          "y": 134.082,
+          "z": 378.336
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-50",
+    "type": "system",
+    "name": "Eniobel System",
+    "position": {
+      "x": 57.457,
+      "y": -472.024,
+      "z": 376.356
+    },
+    "stars": [
+      {
+        "id": "system-50-star-1",
+        "name": "Dentan",
+        "position": {
+          "x": 57.457,
+          "y": -472.024,
+          "z": 376.356
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-51",
+    "type": "system",
+    "name": "Yorio System",
+    "position": {
+      "x": 4.089,
+      "y": -45.643,
+      "z": 462.171
+    },
+    "stars": [
+      {
+        "id": "system-51-star-1",
+        "name": "Ulfizen",
+        "position": {
+          "x": 4.089,
+          "y": -45.643,
+          "z": 462.171
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-52",
+    "type": "system",
+    "name": "Tanzen System",
+    "position": {
+      "x": 427.725,
+      "y": 4.324,
+      "z": 384.84
+    },
+    "stars": [
+      {
+        "id": "system-52-star-1",
+        "name": "Becorwen",
+        "position": {
+          "x": 427.732,
+          "y": 4.319,
+          "z": 384.839
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-52-star-2",
+        "name": "Kael",
+        "position": {
+          "x": 427.717,
+          "y": 4.328,
+          "z": 384.84
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-53",
+    "type": "system",
+    "name": "Enorla-U System",
+    "position": {
+      "x": 250.25,
+      "y": 162.469,
+      "z": 145.577
+    },
+    "stars": [
+      {
+        "id": "system-53-star-1",
+        "name": "Daquapha",
+        "position": {
+          "x": 250.233,
+          "y": 162.468,
+          "z": 145.592
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-53-star-2",
+        "name": "Arxeran",
+        "position": {
+          "x": 250.267,
+          "y": 162.471,
+          "z": 145.561
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-54",
+    "type": "system",
+    "name": "Belxeden System",
+    "position": {
+      "x": 367.913,
+      "y": 134.915,
+      "z": 374.764
+    },
+    "stars": [
+      {
+        "id": "system-54-star-1",
+        "name": "Enquaxe-E",
+        "position": {
+          "x": 367.913,
+          "y": 134.915,
+          "z": 374.764
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-55",
+    "type": "system",
+    "name": "Narel System",
+    "position": {
+      "x": -252.829,
+      "y": -190.853,
+      "z": 248.662
+    },
+    "stars": [
+      {
+        "id": "system-55-star-1",
+        "name": "Narlinio",
+        "position": {
+          "x": -252.819,
+          "y": -190.857,
+          "z": 248.667
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-55-star-2",
+        "name": "Dafilin",
+        "position": {
+          "x": -252.84,
+          "y": -190.85,
+          "z": 248.657
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-56",
+    "type": "system",
+    "name": "Ulwenxe System",
+    "position": {
+      "x": 452.398,
+      "y": 463.458,
+      "z": -113.18
+    },
+    "stars": [
+      {
+        "id": "system-56-star-1",
+        "name": "Daallin",
+        "position": {
+          "x": 452.398,
+          "y": 463.458,
+          "z": -113.18
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-57",
+    "type": "system",
+    "name": "Arkamor System",
+    "position": {
+      "x": -496.356,
+      "y": 151.935,
+      "z": 224.553
+    },
+    "stars": [
+      {
+        "id": "system-57-star-1",
+        "name": "Narhalden",
+        "position": {
+          "x": -496.341,
+          "y": 151.943,
+          "z": 224.558
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-57-star-2",
+        "name": "Daalka-C",
+        "position": {
+          "x": -496.372,
+          "y": 151.926,
+          "z": 224.547
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-58",
+    "type": "system",
+    "name": "Linar System",
+    "position": {
+      "x": -168.904,
+      "y": -4.209,
+      "z": -66.437
+    },
+    "stars": [
+      {
+        "id": "system-58-star-1",
+        "name": "Vorpha",
+        "position": {
+          "x": -168.904,
+          "y": -4.209,
+          "z": -66.437
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-59",
+    "type": "system",
+    "name": "Ultan System",
+    "position": {
+      "x": -169.551,
+      "y": -3.725,
+      "z": -67.475
+    },
+    "stars": [
+      {
+        "id": "system-59-star-1",
+        "name": "Elorhal",
+        "position": {
+          "x": -169.551,
+          "y": -3.725,
+          "z": -67.475
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-60",
+    "type": "system",
+    "name": "Quabeor-J System",
+    "position": {
+      "x": -9.011,
+      "y": -395.615,
+      "z": 484.221
+    },
+    "stars": [
+      {
+        "id": "system-60-star-1",
+        "name": "Wenbel",
+        "position": {
+          "x": -9.011,
+          "y": -395.615,
+          "z": 484.221
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-61",
+    "type": "system",
+    "name": "Wenda System",
+    "position": {
+      "x": -252.428,
+      "y": -192.382,
+      "z": 249.567
+    },
+    "stars": [
+      {
+        "id": "system-61-star-1",
+        "name": "Zenla",
+        "position": {
+          "x": -252.428,
+          "y": -192.382,
+          "z": 249.567
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-62",
+    "type": "system",
+    "name": "Laiosel System",
+    "position": {
+      "x": -253.49,
+      "y": -190.546,
+      "z": 249.426
+    },
+    "stars": [
+      {
+        "id": "system-62-star-1",
+        "name": "Arphasel",
+        "position": {
+          "x": -253.48,
+          "y": -190.557,
+          "z": 249.434
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-62-star-2",
+        "name": "Ulquaka",
+        "position": {
+          "x": -253.51,
+          "y": -190.543,
+          "z": 249.429
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-62-star-3",
+        "name": "Firan",
+        "position": {
+          "x": -253.484,
+          "y": -190.537,
+          "z": 249.429
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-62-star-4",
+        "name": "Alseltan",
+        "position": {
+          "x": -253.484,
+          "y": -190.546,
+          "z": 249.413
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-63",
+    "type": "system",
+    "name": "Belkala System",
+    "position": {
+      "x": 55.892,
+      "y": -471.46,
+      "z": 376.615
+    },
+    "stars": [
+      {
+        "id": "system-63-star-1",
+        "name": "Denkelyor",
+        "position": {
+          "x": 55.89,
+          "y": -471.463,
+          "z": 376.61
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-63-star-2",
+        "name": "Garlinbel",
+        "position": {
+          "x": 55.893,
+          "y": -471.456,
+          "z": 376.619
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-64",
+    "type": "system",
+    "name": "Narfi System",
+    "position": {
+      "x": -260.298,
+      "y": 65.02,
+      "z": -279.114
+    },
+    "stars": [
+      {
+        "id": "system-64-star-1",
+        "name": "Kellin",
+        "position": {
+          "x": -260.298,
+          "y": 65.02,
+          "z": -279.114
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-65",
+    "type": "system",
+    "name": "Xedapha-D System",
+    "position": {
+      "x": 369.418,
+      "y": 136.64,
+      "z": 377.44
+    },
+    "stars": [
+      {
+        "id": "system-65-star-1",
+        "name": "Latan",
+        "position": {
+          "x": 369.413,
+          "y": 136.627,
+          "z": 377.444
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-65-star-2",
+        "name": "Laden",
+        "position": {
+          "x": 369.423,
+          "y": 136.652,
+          "z": 377.435
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-66",
+    "type": "system",
+    "name": "Iosel System",
+    "position": {
+      "x": -170.896,
+      "y": -4.008,
+      "z": -66.175
+    },
+    "stars": [
+      {
+        "id": "system-66-star-1",
+        "name": "Rancorar",
+        "position": {
+          "x": -170.89,
+          "y": -4,
+          "z": -66.162
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-66-star-2",
+        "name": "Fihalel",
+        "position": {
+          "x": -170.903,
+          "y": -4.016,
+          "z": -66.188
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-67",
+    "type": "system",
+    "name": "Beldenpha System",
+    "position": {
+      "x": -168.559,
+      "y": -2.84,
+      "z": -65.768
+    },
+    "stars": [
+      {
+        "id": "system-67-star-1",
+        "name": "Elen",
+        "position": {
+          "x": -168.559,
+          "y": -2.84,
+          "z": -65.768
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-68",
+    "type": "system",
+    "name": "Anbe System",
+    "position": {
+      "x": 193.639,
+      "y": 329.556,
+      "z": -321.929
+    },
+    "stars": [
+      {
+        "id": "system-68-star-1",
+        "name": "Fika-E",
+        "position": {
+          "x": 193.639,
+          "y": 329.556,
+          "z": -321.929
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-69",
+    "type": "system",
+    "name": "Vorkelio System",
+    "position": {
+      "x": 386.077,
+      "y": 180.923,
+      "z": 399.886
+    },
+    "stars": [
+      {
+        "id": "system-69-star-1",
+        "name": "Nargarar",
+        "position": {
+          "x": 386.073,
+          "y": 180.92,
+          "z": 399.885
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-69-star-2",
+        "name": "Corul",
+        "position": {
+          "x": 386.08,
+          "y": 180.925,
+          "z": 399.886
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-70",
+    "type": "system",
+    "name": "Zenlinyor System",
+    "position": {
+      "x": -253.704,
+      "y": -192.13,
+      "z": 246.332
+    },
+    "stars": [
+      {
+        "id": "system-70-star-1",
+        "name": "Anbeel",
+        "position": {
+          "x": -253.699,
+          "y": -192.142,
+          "z": 246.337
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-70-star-2",
+        "name": "Kaqua",
+        "position": {
+          "x": -253.688,
+          "y": -192.121,
+          "z": 246.321
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-70-star-3",
+        "name": "Wenorhal",
+        "position": {
+          "x": -253.702,
+          "y": -192.136,
+          "z": 246.325
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-70-star-4",
+        "name": "Garan-U",
+        "position": {
+          "x": -253.727,
+          "y": -192.123,
+          "z": 246.347
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-71",
+    "type": "system",
+    "name": "Dafi System",
+    "position": {
+      "x": -169.228,
+      "y": -3.029,
+      "z": -67.041
+    },
+    "stars": [
+      {
+        "id": "system-71-star-1",
+        "name": "Betan",
+        "position": {
+          "x": -169.226,
+          "y": -3.034,
+          "z": -67.047
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-71-star-2",
+        "name": "Xehalbe",
+        "position": {
+          "x": -169.231,
+          "y": -3.025,
+          "z": -67.035
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-72",
+    "type": "system",
+    "name": "Arbe-W System",
+    "position": {
+      "x": 368.056,
+      "y": 132.635,
+      "z": 377.704
+    },
+    "stars": [
+      {
+        "id": "system-72-star-1",
+        "name": "Zenlaar",
+        "position": {
+          "x": 368.056,
+          "y": 132.635,
+          "z": 377.704
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-73",
+    "type": "system",
+    "name": "Belel System",
+    "position": {
+      "x": 194.692,
+      "y": 329.607,
+      "z": -324.577
+    },
+    "stars": [
+      {
+        "id": "system-73-star-1",
+        "name": "Narfiio",
+        "position": {
+          "x": 194.692,
+          "y": 329.607,
+          "z": -324.577
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-74",
+    "type": "system",
+    "name": "Narden-R System",
+    "position": {
+      "x": 194.303,
+      "y": 328.813,
+      "z": -320.734
+    },
+    "stars": [
+      {
+        "id": "system-74-star-1",
+        "name": "Garpha",
+        "position": {
+          "x": 194.303,
+          "y": 328.813,
+          "z": -320.734
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-75",
+    "type": "system",
+    "name": "Vornartan System",
+    "position": {
+      "x": -138.019,
+      "y": -456.16,
+      "z": -339.36
+    },
+    "stars": [
+      {
+        "id": "system-75-star-1",
+        "name": "Tanbelio",
+        "position": {
+          "x": -138.019,
+          "y": -456.16,
+          "z": -339.36
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-76",
+    "type": "system",
+    "name": "Daulka-L System",
+    "position": {
+      "x": -15.605,
+      "y": 436.112,
+      "z": -125.088
+    },
+    "stars": [
+      {
+        "id": "system-76-star-1",
+        "name": "Alanka",
+        "position": {
+          "x": -15.598,
+          "y": 436.099,
+          "z": -125.088
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-76-star-2",
+        "name": "Selen-A",
+        "position": {
+          "x": -15.613,
+          "y": 436.126,
+          "z": -125.089
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-77",
+    "type": "system",
+    "name": "Vormoral System",
+    "position": {
+      "x": 57.718,
+      "y": -471.357,
+      "z": 376.52
+    },
+    "stars": [
+      {
+        "id": "system-77-star-1",
+        "name": "Elphawen",
+        "position": {
+          "x": 57.718,
+          "y": -471.357,
+          "z": 376.52
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-78",
+    "type": "system",
+    "name": "Narioar System",
+    "position": {
+      "x": 251.693,
+      "y": 163.231,
+      "z": 144.063
+    },
+    "stars": [
+      {
+        "id": "system-78-star-1",
+        "name": "Narquaen-G",
+        "position": {
+          "x": 251.693,
+          "y": 163.231,
+          "z": 144.063
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-79",
+    "type": "system",
+    "name": "Mornarel-U System",
+    "position": {
+      "x": 125.2,
+      "y": 475.325,
+      "z": 241.257
+    },
+    "stars": [
+      {
+        "id": "system-79-star-1",
+        "name": "Daor",
+        "position": {
+          "x": 125.211,
+          "y": 475.312,
+          "z": 241.256
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-79-star-2",
+        "name": "Corcorqua",
+        "position": {
+          "x": 125.184,
+          "y": 475.336,
+          "z": 241.262
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-79-star-3",
+        "name": "Lanar",
+        "position": {
+          "x": 125.203,
+          "y": 475.323,
+          "z": 241.269
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-79-star-4",
+        "name": "Halfilin",
+        "position": {
+          "x": 125.186,
+          "y": 475.339,
+          "z": 241.242
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-79-star-5",
+        "name": "Selmor",
+        "position": {
+          "x": 125.216,
+          "y": 475.316,
+          "z": 241.256
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-80",
+    "type": "system",
+    "name": "Xeanlin System",
+    "position": {
+      "x": 57.54,
+      "y": -473.107,
+      "z": 378.299
+    },
+    "stars": [
+      {
+        "id": "system-80-star-1",
+        "name": "Vorran",
+        "position": {
+          "x": 57.547,
+          "y": -473.107,
+          "z": 378.286
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-80-star-2",
+        "name": "Garlala",
+        "position": {
+          "x": 57.533,
+          "y": -473.108,
+          "z": 378.312
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-81",
+    "type": "system",
+    "name": "Albelpha System",
+    "position": {
+      "x": -5.782,
+      "y": -385.991,
+      "z": 142.621
+    },
+    "stars": [
+      {
+        "id": "system-81-star-1",
+        "name": "Morcor",
+        "position": {
+          "x": -5.782,
+          "y": -385.991,
+          "z": 142.621
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-82",
+    "type": "system",
+    "name": "Lanarhal System",
+    "position": {
+      "x": -169.606,
+      "y": -3.492,
+      "z": -66.265
+    },
+    "stars": [
+      {
+        "id": "system-82-star-1",
+        "name": "Laarfi",
+        "position": {
+          "x": -169.606,
+          "y": -3.492,
+          "z": -66.265
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-83",
+    "type": "system",
+    "name": "Iokelkel System",
+    "position": {
+      "x": -138.988,
+      "y": -497.605,
+      "z": -187.309
+    },
+    "stars": [
+      {
+        "id": "system-83-star-1",
+        "name": "Morhal",
+        "position": {
+          "x": -138.98,
+          "y": -497.601,
+          "z": -187.326
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-83-star-2",
+        "name": "Tanlinor",
+        "position": {
+          "x": -138.996,
+          "y": -497.609,
+          "z": -187.293
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-84",
+    "type": "system",
+    "name": "Mordapha System",
+    "position": {
+      "x": 192.852,
+      "y": 328.604,
+      "z": -321.943
+    },
+    "stars": [
+      {
+        "id": "system-84-star-1",
+        "name": "Linel-Z",
+        "position": {
+          "x": 192.852,
+          "y": 328.604,
+          "z": -321.943
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-85",
+    "type": "system",
+    "name": "Linfi System",
+    "position": {
+      "x": -251.279,
+      "y": -193.05,
+      "z": 247.11
+    },
+    "stars": [
+      {
+        "id": "system-85-star-1",
+        "name": "Ulphabel",
+        "position": {
+          "x": -251.279,
+          "y": -193.05,
+          "z": 247.11
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-86",
+    "type": "system",
+    "name": "Corqua System",
+    "position": {
+      "x": 56.297,
+      "y": -473.04,
+      "z": 376.955
+    },
+    "stars": [
+      {
+        "id": "system-86-star-1",
+        "name": "Belkaio",
+        "position": {
+          "x": 56.292,
+          "y": -473.036,
+          "z": 376.95
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-86-star-2",
+        "name": "Arcorfi",
+        "position": {
+          "x": 56.302,
+          "y": -473.045,
+          "z": 376.96
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-87",
+    "type": "system",
+    "name": "Ulul System",
+    "position": {
+      "x": 59.478,
+      "y": -471.964,
+      "z": 377.333
+    },
+    "stars": [
+      {
+        "id": "system-87-star-1",
+        "name": "Wencornar",
+        "position": {
+          "x": 59.478,
+          "y": -471.964,
+          "z": 377.333
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-88",
+    "type": "system",
+    "name": "Dagar System",
+    "position": {
+      "x": -169.266,
+      "y": -2.443,
+      "z": -68.175
+    },
+    "stars": [
+      {
+        "id": "system-88-star-1",
+        "name": "Garwen",
+        "position": {
+          "x": -169.266,
+          "y": -2.443,
+          "z": -68.175
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-89",
+    "type": "system",
+    "name": "Anal System",
+    "position": {
+      "x": 58.264,
+      "y": -473.455,
+      "z": 379.164
+    },
+    "stars": [
+      {
+        "id": "system-89-star-1",
+        "name": "Alen",
+        "position": {
+          "x": 58.264,
+          "y": -473.455,
+          "z": 379.164
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-90",
+    "type": "system",
+    "name": "Denyorxe System",
+    "position": {
+      "x": 56.278,
+      "y": -472.918,
+      "z": 377.988
+    },
+    "stars": [
+      {
+        "id": "system-90-star-1",
+        "name": "Keltanbe",
+        "position": {
+          "x": 56.285,
+          "y": -472.913,
+          "z": 377.988
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-90-star-2",
+        "name": "Lincornar",
+        "position": {
+          "x": 56.27,
+          "y": -472.924,
+          "z": 377.987
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-91",
+    "type": "system",
+    "name": "Lafiio-P System",
+    "position": {
+      "x": -251.75,
+      "y": -190.553,
+      "z": 248.072
+    },
+    "stars": [
+      {
+        "id": "system-91-star-1",
+        "name": "Halelul",
+        "position": {
+          "x": -251.738,
+          "y": -190.554,
+          "z": 248.074
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-91-star-2",
+        "name": "Allaul",
+        "position": {
+          "x": -251.762,
+          "y": -190.552,
+          "z": 248.069
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-92",
+    "type": "system",
+    "name": "Belmoran System",
+    "position": {
+      "x": 192.981,
+      "y": 326.756,
+      "z": -322.578
+    },
+    "stars": [
+      {
+        "id": "system-92-star-1",
+        "name": "Quaran",
+        "position": {
+          "x": 192.981,
+          "y": 326.756,
+          "z": -322.578
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-93",
+    "type": "system",
+    "name": "Denfi-Q System",
+    "position": {
+      "x": 145.38,
+      "y": 460.585,
+      "z": -324.355
+    },
+    "stars": [
+      {
+        "id": "system-93-star-1",
+        "name": "Yorsel",
+        "position": {
+          "x": 145.374,
+          "y": 460.581,
+          "z": -324.357
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-93-star-2",
+        "name": "Linnar-E",
+        "position": {
+          "x": 145.386,
+          "y": 460.589,
+          "z": -324.353
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-94",
+    "type": "system",
+    "name": "Eltan System",
+    "position": {
+      "x": 405.398,
+      "y": 416.404,
+      "z": -345.268
+    },
+    "stars": [
+      {
+        "id": "system-94-star-1",
+        "name": "Coral",
+        "position": {
+          "x": 405.403,
+          "y": 416.399,
+          "z": -345.27
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-94-star-2",
+        "name": "Ulenar",
+        "position": {
+          "x": 405.393,
+          "y": 416.408,
+          "z": -345.266
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-95",
+    "type": "system",
+    "name": "Garar System",
+    "position": {
+      "x": 56.927,
+      "y": -472.561,
+      "z": 375.497
+    },
+    "stars": [
+      {
+        "id": "system-95-star-1",
+        "name": "Laenkel",
+        "position": {
+          "x": 56.937,
+          "y": -472.551,
+          "z": 375.489
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-95-star-2",
+        "name": "Iolinhal",
+        "position": {
+          "x": 56.916,
+          "y": -472.571,
+          "z": 375.506
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-96",
+    "type": "system",
+    "name": "Garkelbel System",
+    "position": {
+      "x": 195.51,
+      "y": 331.477,
+      "z": -322.872
+    },
+    "stars": [
+      {
+        "id": "system-96-star-1",
+        "name": "Alal-U",
+        "position": {
+          "x": 195.506,
+          "y": 331.474,
+          "z": -322.853
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-96-star-2",
+        "name": "Argarda-T",
+        "position": {
+          "x": 195.513,
+          "y": 331.48,
+          "z": -322.891
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-97",
+    "type": "system",
+    "name": "Halelbe System",
+    "position": {
+      "x": -252.581,
+      "y": -192.678,
+      "z": 247.606
+    },
+    "stars": [
+      {
+        "id": "system-97-star-1",
+        "name": "Zenmor",
+        "position": {
+          "x": -252.581,
+          "y": -192.678,
+          "z": 247.606
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-98",
+    "type": "system",
+    "name": "Bella-T System",
+    "position": {
+      "x": -252.131,
+      "y": -191.643,
+      "z": 248.405
+    },
+    "stars": [
+      {
+        "id": "system-98-star-1",
+        "name": "Yorqua",
+        "position": {
+          "x": -252.131,
+          "y": -191.643,
+          "z": 248.405
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-99",
+    "type": "system",
+    "name": "Orlaka-J System",
+    "position": {
+      "x": 196.816,
+      "y": 328.109,
+      "z": -322.698
+    },
+    "stars": [
+      {
+        "id": "system-99-star-1",
+        "name": "Morbel",
+        "position": {
+          "x": 196.816,
+          "y": 328.109,
+          "z": -322.698
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-100",
+    "type": "system",
+    "name": "Narcorden System",
+    "position": {
+      "x": 313.35,
+      "y": -259.569,
+      "z": -178.232
+    },
+    "stars": [
+      {
+        "id": "system-100-star-1",
+        "name": "Xear",
+        "position": {
+          "x": 313.353,
+          "y": -259.584,
+          "z": -178.236
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-100-star-2",
+        "name": "Halenzen-T",
+        "position": {
+          "x": 313.359,
+          "y": -259.56,
+          "z": -178.225
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-100-star-3",
+        "name": "Garbela",
+        "position": {
+          "x": 313.338,
+          "y": -259.563,
+          "z": -178.234
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-101",
+    "type": "system",
+    "name": "Kelcoran-R System",
+    "position": {
+      "x": 193.711,
+      "y": 328.391,
+      "z": -321.715
+    },
+    "stars": [
+      {
+        "id": "system-101-star-1",
+        "name": "Tanbean",
+        "position": {
+          "x": 193.711,
+          "y": 328.391,
+          "z": -321.715
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-102",
+    "type": "system",
+    "name": "Ranquaka-G System",
+    "position": {
+      "x": -168.916,
+      "y": -3.858,
+      "z": -64.073
+    },
+    "stars": [
+      {
+        "id": "system-102-star-1",
+        "name": "Xekel",
+        "position": {
+          "x": -168.916,
+          "y": -3.858,
+          "z": -64.073
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-103",
+    "type": "system",
+    "name": "Xeyorbe System",
+    "position": {
+      "x": 368.754,
+      "y": 137.038,
+      "z": 377.282
+    },
+    "stars": [
+      {
+        "id": "system-103-star-1",
+        "name": "Halanka",
+        "position": {
+          "x": 368.755,
+          "y": 137.032,
+          "z": 377.294
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-103-star-2",
+        "name": "Iophaor",
+        "position": {
+          "x": 368.74,
+          "y": 137.037,
+          "z": 377.293
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-103-star-3",
+        "name": "Vorbel",
+        "position": {
+          "x": 368.767,
+          "y": 137.044,
+          "z": 377.26
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-104",
+    "type": "system",
+    "name": "Anqua System",
+    "position": {
+      "x": 482.077,
+      "y": -345.081,
+      "z": 67.722
+    },
+    "stars": [
+      {
+        "id": "system-104-star-1",
+        "name": "Lamor",
+        "position": {
+          "x": 482.077,
+          "y": -345.081,
+          "z": 67.722
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-105",
+    "type": "system",
+    "name": "Eniomor System",
+    "position": {
+      "x": 56.511,
+      "y": -473.789,
+      "z": 376.97
+    },
+    "stars": [
+      {
+        "id": "system-105-star-1",
+        "name": "Vorxetan",
+        "position": {
+          "x": 56.511,
+          "y": -473.789,
+          "z": 376.97
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-106",
+    "type": "system",
+    "name": "Dalin System",
+    "position": {
+      "x": 45.634,
+      "y": 31,
+      "z": 147.558
+    },
+    "stars": [
+      {
+        "id": "system-106-star-1",
+        "name": "Ioqua-H",
+        "position": {
+          "x": 45.634,
+          "y": 31,
+          "z": 147.558
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-107",
+    "type": "system",
+    "name": "Vorbella System",
+    "position": {
+      "x": 249.449,
+      "y": 162.715,
+      "z": 145.38
+    },
+    "stars": [
+      {
+        "id": "system-107-star-1",
+        "name": "Iohalka",
+        "position": {
+          "x": 249.461,
+          "y": 162.71,
+          "z": 145.38
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-107-star-2",
+        "name": "Alda",
+        "position": {
+          "x": 249.437,
+          "y": 162.72,
+          "z": 145.379
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-108",
+    "type": "system",
+    "name": "Halul System",
+    "position": {
+      "x": 195.281,
+      "y": 329.551,
+      "z": -323.349
+    },
+    "stars": [
+      {
+        "id": "system-108-star-1",
+        "name": "Laqua",
+        "position": {
+          "x": 195.281,
+          "y": 329.551,
+          "z": -323.349
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-109",
+    "type": "system",
+    "name": "Beka System",
+    "position": {
+      "x": 59.035,
+      "y": -473.01,
+      "z": 378.169
+    },
+    "stars": [
+      {
+        "id": "system-109-star-1",
+        "name": "Vorda",
+        "position": {
+          "x": 59.027,
+          "y": -473.013,
+          "z": 378.161
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-109-star-2",
+        "name": "Halkacor",
+        "position": {
+          "x": 59.036,
+          "y": -473.012,
+          "z": 378.178
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-109-star-3",
+        "name": "Elxeul",
+        "position": {
+          "x": 59.046,
+          "y": -473,
+          "z": 378.173
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-109-star-4",
+        "name": "Arbel-F",
+        "position": {
+          "x": 59.03,
+          "y": -473.014,
+          "z": 378.163
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-110",
+    "type": "system",
+    "name": "Kakel System",
+    "position": {
+      "x": 368.02,
+      "y": 136.685,
+      "z": 377.573
+    },
+    "stars": [
+      {
+        "id": "system-110-star-1",
+        "name": "Mortanel",
+        "position": {
+          "x": 368.02,
+          "y": 136.685,
+          "z": 377.573
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-111",
+    "type": "system",
+    "name": "Ulxe System",
+    "position": {
+      "x": 368.735,
+      "y": 136.001,
+      "z": 376.853
+    },
+    "stars": [
+      {
+        "id": "system-111-star-1",
+        "name": "Corioden-S",
+        "position": {
+          "x": 368.728,
+          "y": 135.992,
+          "z": 376.852
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-111-star-2",
+        "name": "Arcorul-B",
+        "position": {
+          "x": 368.741,
+          "y": 136.01,
+          "z": 376.854
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-112",
+    "type": "system",
+    "name": "Orxe System",
+    "position": {
+      "x": -210.035,
+      "y": -258.999,
+      "z": -211.124
+    },
+    "stars": [
+      {
+        "id": "system-112-star-1",
+        "name": "Ranpha",
+        "position": {
+          "x": -210.035,
+          "y": -258.999,
+          "z": -211.124
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-113",
+    "type": "system",
+    "name": "Bemoror System",
+    "position": {
+      "x": 56.08,
+      "y": -473.082,
+      "z": 377.207
+    },
+    "stars": [
+      {
+        "id": "system-113-star-1",
+        "name": "Fibe",
+        "position": {
+          "x": 56.08,
+          "y": -473.082,
+          "z": 377.207
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-114",
+    "type": "system",
+    "name": "Ulal System",
+    "position": {
+      "x": 195.027,
+      "y": 330.461,
+      "z": -323.758
+    },
+    "stars": [
+      {
+        "id": "system-114-star-1",
+        "name": "Selel",
+        "position": {
+          "x": 195.027,
+          "y": 330.461,
+          "z": -323.758
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-115",
+    "type": "system",
+    "name": "Tannaral System",
+    "position": {
+      "x": 57.347,
+      "y": -472.64,
+      "z": 375.735
+    },
+    "stars": [
+      {
+        "id": "system-115-star-1",
+        "name": "Garbeltan",
+        "position": {
+          "x": 57.335,
+          "y": -472.644,
+          "z": 375.729
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-115-star-2",
+        "name": "Vorfi-A",
+        "position": {
+          "x": 57.359,
+          "y": -472.636,
+          "z": 375.741
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-116",
+    "type": "system",
+    "name": "Selen System",
+    "position": {
+      "x": -463.384,
+      "y": 122.541,
+      "z": 279.311
+    },
+    "stars": [
+      {
+        "id": "system-116-star-1",
+        "name": "Wenbelran-I",
+        "position": {
+          "x": -463.386,
+          "y": 122.527,
+          "z": 279.301
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-116-star-2",
+        "name": "Kaanul",
+        "position": {
+          "x": -463.382,
+          "y": 122.555,
+          "z": 279.32
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-117",
+    "type": "system",
+    "name": "Narwenan System",
+    "position": {
+      "x": 57.152,
+      "y": -471.23,
+      "z": 376.233
+    },
+    "stars": [
+      {
+        "id": "system-117-star-1",
+        "name": "Kelar",
+        "position": {
+          "x": 57.152,
+          "y": -471.23,
+          "z": 376.233
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-118",
+    "type": "system",
+    "name": "Wenzenhal-X System",
+    "position": {
+      "x": 369.677,
+      "y": 135.457,
+      "z": 378.784
+    },
+    "stars": [
+      {
+        "id": "system-118-star-1",
+        "name": "Yoranor",
+        "position": {
+          "x": 369.677,
+          "y": 135.457,
+          "z": 378.784
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-119",
+    "type": "system",
+    "name": "Dalinul System",
+    "position": {
+      "x": -180.428,
+      "y": 276.819,
+      "z": 31.193
+    },
+    "stars": [
+      {
+        "id": "system-119-star-1",
+        "name": "Ioxe",
+        "position": {
+          "x": -180.428,
+          "y": 276.819,
+          "z": 31.193
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-120",
+    "type": "system",
+    "name": "Arel System",
+    "position": {
+      "x": 57.955,
+      "y": -473.584,
+      "z": 375.632
+    },
+    "stars": [
+      {
+        "id": "system-120-star-1",
+        "name": "Beyorzen",
+        "position": {
+          "x": 57.955,
+          "y": -473.584,
+          "z": 375.632
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-121",
+    "type": "system",
+    "name": "Orfi System",
+    "position": {
+      "x": 367.957,
+      "y": 135.409,
+      "z": 375.75
+    },
+    "stars": [
+      {
+        "id": "system-121-star-1",
+        "name": "Tanbe",
+        "position": {
+          "x": 367.957,
+          "y": 135.409,
+          "z": 375.75
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-122",
+    "type": "system",
+    "name": "Beorsel-S System",
+    "position": {
+      "x": 57.112,
+      "y": -474.981,
+      "z": 377.617
+    },
+    "stars": [
+      {
+        "id": "system-122-star-1",
+        "name": "Wencorkel",
+        "position": {
+          "x": 57.112,
+          "y": -474.981,
+          "z": 377.617
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-123",
+    "type": "system",
+    "name": "Ioelen System",
+    "position": {
+      "x": 195.783,
+      "y": 329.106,
+      "z": -323.256
+    },
+    "stars": [
+      {
+        "id": "system-123-star-1",
+        "name": "Tanmoryor",
+        "position": {
+          "x": 195.789,
+          "y": 329.102,
+          "z": -323.245
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-123-star-2",
+        "name": "Corran",
+        "position": {
+          "x": 195.776,
+          "y": 329.11,
+          "z": -323.268
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-124",
+    "type": "system",
+    "name": "Quaranda-P System",
+    "position": {
+      "x": 55.016,
+      "y": -471.559,
+      "z": 376.651
+    },
+    "stars": [
+      {
+        "id": "system-124-star-1",
+        "name": "Wenda",
+        "position": {
+          "x": 55.009,
+          "y": -471.554,
+          "z": 376.646
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-124-star-2",
+        "name": "Ular",
+        "position": {
+          "x": 55.023,
+          "y": -471.564,
+          "z": 376.656
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-125",
+    "type": "system",
+    "name": "Gartanda-G System",
+    "position": {
+      "x": 195.443,
+      "y": 328.887,
+      "z": -322.293
+    },
+    "stars": [
+      {
+        "id": "system-125-star-1",
+        "name": "Dahalfi",
+        "position": {
+          "x": 195.443,
+          "y": 328.887,
+          "z": -322.293
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-126",
+    "type": "system",
+    "name": "Anioor System",
+    "position": {
+      "x": -252.531,
+      "y": -192.368,
+      "z": 249.943
+    },
+    "stars": [
+      {
+        "id": "system-126-star-1",
+        "name": "Linda",
+        "position": {
+          "x": -252.541,
+          "y": -192.362,
+          "z": 249.955
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-126-star-2",
+        "name": "Halario-H",
+        "position": {
+          "x": -252.52,
+          "y": -192.374,
+          "z": 249.93
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-127",
+    "type": "system",
+    "name": "Garbelel-F System",
+    "position": {
+      "x": 56.727,
+      "y": -472.164,
+      "z": 375.842
+    },
+    "stars": [
+      {
+        "id": "system-127-star-1",
+        "name": "Xeorzen",
+        "position": {
+          "x": 56.727,
+          "y": -472.164,
+          "z": 375.842
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-128",
+    "type": "system",
+    "name": "Quaio System",
+    "position": {
+      "x": 58.332,
+      "y": -472.513,
+      "z": 377.325
+    },
+    "stars": [
+      {
+        "id": "system-128-star-1",
+        "name": "Yordenwen-M",
+        "position": {
+          "x": 58.332,
+          "y": -472.513,
+          "z": 377.325
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-129",
+    "type": "system",
+    "name": "Kaio System",
+    "position": {
+      "x": 187.353,
+      "y": -399.283,
+      "z": -159.164
+    },
+    "stars": [
+      {
+        "id": "system-129-star-1",
+        "name": "Zenenla",
+        "position": {
+          "x": 187.353,
+          "y": -399.283,
+          "z": -159.164
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-130",
+    "type": "system",
+    "name": "Qualahal System",
+    "position": {
+      "x": 249.928,
+      "y": 162.345,
+      "z": 145.124
+    },
+    "stars": [
+      {
+        "id": "system-130-star-1",
+        "name": "Kaoryor",
+        "position": {
+          "x": 249.928,
+          "y": 162.345,
+          "z": 145.124
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-131",
+    "type": "system",
+    "name": "Yorlaio-Y System",
+    "position": {
+      "x": 251.854,
+      "y": 161.962,
+      "z": 144.305
+    },
+    "stars": [
+      {
+        "id": "system-131-star-1",
+        "name": "Phaarda",
+        "position": {
+          "x": 251.854,
+          "y": 161.962,
+          "z": 144.305
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-132",
+    "type": "system",
+    "name": "Vorioyor System",
+    "position": {
+      "x": -170.282,
+      "y": -3.069,
+      "z": -65.511
+    },
+    "stars": [
+      {
+        "id": "system-132-star-1",
+        "name": "Pharanxe",
+        "position": {
+          "x": -170.282,
+          "y": -3.069,
+          "z": -65.511
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-133",
+    "type": "system",
+    "name": "Iotan System",
+    "position": {
+      "x": -436.571,
+      "y": 359.924,
+      "z": 199.834
+    },
+    "stars": [
+      {
+        "id": "system-133-star-1",
+        "name": "Engar",
+        "position": {
+          "x": -436.572,
+          "y": 359.917,
+          "z": 199.833
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-133-star-2",
+        "name": "Betanran",
+        "position": {
+          "x": -436.571,
+          "y": 359.931,
+          "z": 199.835
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-134",
+    "type": "system",
+    "name": "Phacornar System",
+    "position": {
+      "x": 88.061,
+      "y": -299.299,
+      "z": -330.89
+    },
+    "stars": [
+      {
+        "id": "system-134-star-1",
+        "name": "Belbel",
+        "position": {
+          "x": 88.055,
+          "y": -299.293,
+          "z": -330.876
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-134-star-2",
+        "name": "Ulmor",
+        "position": {
+          "x": 88.067,
+          "y": -299.305,
+          "z": -330.904
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-135",
+    "type": "system",
+    "name": "Morden-A System",
+    "position": {
+      "x": -225.713,
+      "y": -370.868,
+      "z": 56.782
+    },
+    "stars": [
+      {
+        "id": "system-135-star-1",
+        "name": "Taniopha",
+        "position": {
+          "x": -225.713,
+          "y": -370.868,
+          "z": 56.782
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-136",
+    "type": "system",
+    "name": "Ioka System",
+    "position": {
+      "x": 194.433,
+      "y": 328.824,
+      "z": -322.294
+    },
+    "stars": [
+      {
+        "id": "system-136-star-1",
+        "name": "Selwen-M",
+        "position": {
+          "x": 194.437,
+          "y": 328.818,
+          "z": -322.306
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-136-star-2",
+        "name": "Garnartan",
+        "position": {
+          "x": 194.429,
+          "y": 328.83,
+          "z": -322.283
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-137",
+    "type": "system",
+    "name": "Aryorvor System",
+    "position": {
+      "x": 210.96,
+      "y": 406.666,
+      "z": -3.482
+    },
+    "stars": [
+      {
+        "id": "system-137-star-1",
+        "name": "Xezen",
+        "position": {
+          "x": 210.96,
+          "y": 406.666,
+          "z": -3.482
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-138",
+    "type": "system",
+    "name": "Kelphawen System",
+    "position": {
+      "x": 250.298,
+      "y": 163.035,
+      "z": 146.775
+    },
+    "stars": [
+      {
+        "id": "system-138-star-1",
+        "name": "Quaqua",
+        "position": {
+          "x": 250.298,
+          "y": 163.035,
+          "z": 146.775
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-139",
+    "type": "system",
+    "name": "Halxe-F System",
+    "position": {
+      "x": 193.133,
+      "y": 329.151,
+      "z": -324.185
+    },
+    "stars": [
+      {
+        "id": "system-139-star-1",
+        "name": "Phacor",
+        "position": {
+          "x": 193.133,
+          "y": 329.151,
+          "z": -324.185
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-140",
+    "type": "system",
+    "name": "Halfi System",
+    "position": {
+      "x": -253.452,
+      "y": -191.744,
+      "z": 248.929
+    },
+    "stars": [
+      {
+        "id": "system-140-star-1",
+        "name": "Ulio",
+        "position": {
+          "x": -253.452,
+          "y": -191.744,
+          "z": 248.929
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-141",
+    "type": "system",
+    "name": "Label-X System",
+    "position": {
+      "x": 191.621,
+      "y": 327.894,
+      "z": -323.131
+    },
+    "stars": [
+      {
+        "id": "system-141-star-1",
+        "name": "Halel-A",
+        "position": {
+          "x": 191.621,
+          "y": 327.894,
+          "z": -323.131
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-142",
+    "type": "system",
+    "name": "Tanla System",
+    "position": {
+      "x": 368.725,
+      "y": 135.178,
+      "z": 378.4
+    },
+    "stars": [
+      {
+        "id": "system-142-star-1",
+        "name": "Iobel",
+        "position": {
+          "x": 368.709,
+          "y": 135.173,
+          "z": 378.392
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-142-star-2",
+        "name": "Denla-C",
+        "position": {
+          "x": 368.74,
+          "y": 135.183,
+          "z": 378.409
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-143",
+    "type": "system",
+    "name": "Morelfi System",
+    "position": {
+      "x": 369.554,
+      "y": 137.404,
+      "z": 375.901
+    },
+    "stars": [
+      {
+        "id": "system-143-star-1",
+        "name": "Denelio",
+        "position": {
+          "x": 369.554,
+          "y": 137.404,
+          "z": 375.901
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-144",
+    "type": "system",
+    "name": "Xegarqua-H System",
+    "position": {
+      "x": 57.513,
+      "y": -470.278,
+      "z": 376.311
+    },
+    "stars": [
+      {
+        "id": "system-144-star-1",
+        "name": "Bemoran",
+        "position": {
+          "x": 57.513,
+          "y": -470.278,
+          "z": 376.311
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-145",
+    "type": "system",
+    "name": "Wenmorar System",
+    "position": {
+      "x": 251.249,
+      "y": 164.334,
+      "z": 142.869
+    },
+    "stars": [
+      {
+        "id": "system-145-star-1",
+        "name": "Yornar",
+        "position": {
+          "x": 251.249,
+          "y": 164.334,
+          "z": 142.869
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-146",
+    "type": "system",
+    "name": "Belwenhal System",
+    "position": {
+      "x": -253.246,
+      "y": -189.882,
+      "z": 247.847
+    },
+    "stars": [
+      {
+        "id": "system-146-star-1",
+        "name": "Ioarqua",
+        "position": {
+          "x": -253.256,
+          "y": -189.865,
+          "z": 247.857
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-146-star-2",
+        "name": "Belmor",
+        "position": {
+          "x": -253.237,
+          "y": -189.898,
+          "z": 247.837
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-147",
+    "type": "system",
+    "name": "Daenlin System",
+    "position": {
+      "x": -253.905,
+      "y": -191.752,
+      "z": 247.728
+    },
+    "stars": [
+      {
+        "id": "system-147-star-1",
+        "name": "Garlinden",
+        "position": {
+          "x": -253.905,
+          "y": -191.752,
+          "z": 247.728
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-148",
+    "type": "system",
+    "name": "Mormorbel System",
+    "position": {
+      "x": -199.59,
+      "y": 110.225,
+      "z": 188.51
+    },
+    "stars": [
+      {
+        "id": "system-148-star-1",
+        "name": "Alkel",
+        "position": {
+          "x": -199.581,
+          "y": 110.232,
+          "z": 188.498
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-148-star-2",
+        "name": "Selen",
+        "position": {
+          "x": -199.599,
+          "y": 110.218,
+          "z": 188.522
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-149",
+    "type": "system",
+    "name": "Linio System",
+    "position": {
+      "x": -410.293,
+      "y": -77.516,
+      "z": 165.578
+    },
+    "stars": [
+      {
+        "id": "system-149-star-1",
+        "name": "Halfi",
+        "position": {
+          "x": -410.293,
+          "y": -77.516,
+          "z": 165.578
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-150",
+    "type": "system",
+    "name": "Kabegar System",
+    "position": {
+      "x": -167.637,
+      "y": -3.553,
+      "z": -66.364
+    },
+    "stars": [
+      {
+        "id": "system-150-star-1",
+        "name": "Yorgarar",
+        "position": {
+          "x": -167.642,
+          "y": -3.546,
+          "z": -66.347
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-150-star-2",
+        "name": "Zenlaor-C",
+        "position": {
+          "x": -167.633,
+          "y": -3.56,
+          "z": -66.382
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-151",
+    "type": "system",
+    "name": "Halor System",
+    "position": {
+      "x": -105.712,
+      "y": -88.849,
+      "z": 347.228
+    },
+    "stars": [
+      {
+        "id": "system-151-star-1",
+        "name": "Weniola-X",
+        "position": {
+          "x": -105.712,
+          "y": -88.849,
+          "z": 347.228
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-152",
+    "type": "system",
+    "name": "Narkel System",
+    "position": {
+      "x": -317.155,
+      "y": 195.71,
+      "z": 154.614
+    },
+    "stars": [
+      {
+        "id": "system-152-star-1",
+        "name": "Kelel-B",
+        "position": {
+          "x": -317.155,
+          "y": 195.71,
+          "z": 154.614
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-153",
+    "type": "system",
+    "name": "Ranbelbe System",
+    "position": {
+      "x": 56.676,
+      "y": -473.86,
+      "z": 377.573
+    },
+    "stars": [
+      {
+        "id": "system-153-star-1",
+        "name": "Halenal-I",
+        "position": {
+          "x": 56.676,
+          "y": -473.86,
+          "z": 377.573
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-154",
+    "type": "system",
+    "name": "Garvorar System",
+    "position": {
+      "x": 250.44,
+      "y": 162.223,
+      "z": 143.888
+    },
+    "stars": [
+      {
+        "id": "system-154-star-1",
+        "name": "Yorbe",
+        "position": {
+          "x": 250.442,
+          "y": 162.234,
+          "z": 143.888
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-154-star-2",
+        "name": "Kazen",
+        "position": {
+          "x": 250.438,
+          "y": 162.211,
+          "z": 143.887
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-155",
+    "type": "system",
+    "name": "Ulran System",
+    "position": {
+      "x": 250.179,
+      "y": 162.644,
+      "z": 144.263
+    },
+    "stars": [
+      {
+        "id": "system-155-star-1",
+        "name": "Anquawen",
+        "position": {
+          "x": 250.179,
+          "y": 162.644,
+          "z": 144.263
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-156",
+    "type": "system",
+    "name": "Belkel System",
+    "position": {
+      "x": 369.464,
+      "y": 136.208,
+      "z": 376.06
+    },
+    "stars": [
+      {
+        "id": "system-156-star-1",
+        "name": "Kaxe",
+        "position": {
+          "x": 369.464,
+          "y": 136.208,
+          "z": 376.06
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-157",
+    "type": "system",
+    "name": "Anan System",
+    "position": {
+      "x": 194.55,
+      "y": -201.07,
+      "z": -443.985
+    },
+    "stars": [
+      {
+        "id": "system-157-star-1",
+        "name": "Ancorka",
+        "position": {
+          "x": 194.551,
+          "y": -201.073,
+          "z": -443.974
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-157-star-2",
+        "name": "Naralal",
+        "position": {
+          "x": 194.548,
+          "y": -201.067,
+          "z": -443.996
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-158",
+    "type": "system",
+    "name": "Xewenfi-N System",
+    "position": {
+      "x": 368.678,
+      "y": 135.138,
+      "z": 377.993
+    },
+    "stars": [
+      {
+        "id": "system-158-star-1",
+        "name": "Fimor",
+        "position": {
+          "x": 368.678,
+          "y": 135.138,
+          "z": 377.993
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-159",
+    "type": "system",
+    "name": "Yorenran-W System",
+    "position": {
+      "x": 249.579,
+      "y": 162.256,
+      "z": 145.478
+    },
+    "stars": [
+      {
+        "id": "system-159-star-1",
+        "name": "Halan",
+        "position": {
+          "x": 249.579,
+          "y": 162.256,
+          "z": 145.478
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-160",
+    "type": "system",
+    "name": "Ulka System",
+    "position": {
+      "x": 56.637,
+      "y": -473.289,
+      "z": 377.415
+    },
+    "stars": [
+      {
+        "id": "system-160-star-1",
+        "name": "Garmor",
+        "position": {
+          "x": 56.637,
+          "y": -473.289,
+          "z": 377.415
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-161",
+    "type": "system",
+    "name": "Ulalul System",
+    "position": {
+      "x": 366.21,
+      "y": 137.872,
+      "z": 378.535
+    },
+    "stars": [
+      {
+        "id": "system-161-star-1",
+        "name": "Halda",
+        "position": {
+          "x": 366.21,
+          "y": 137.872,
+          "z": 378.535
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-162",
+    "type": "system",
+    "name": "Zenranhal System",
+    "position": {
+      "x": -254.816,
+      "y": -191.473,
+      "z": 246.717
+    },
+    "stars": [
+      {
+        "id": "system-162-star-1",
+        "name": "Wengarul",
+        "position": {
+          "x": -254.813,
+          "y": -191.489,
+          "z": 246.711
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-162-star-2",
+        "name": "Rantan",
+        "position": {
+          "x": -254.819,
+          "y": -191.458,
+          "z": 246.722
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-163",
+    "type": "system",
+    "name": "Lalin System",
+    "position": {
+      "x": 201.325,
+      "y": 211.99,
+      "z": -190.704
+    },
+    "stars": [
+      {
+        "id": "system-163-star-1",
+        "name": "Morda-O",
+        "position": {
+          "x": 201.313,
+          "y": 211.983,
+          "z": -190.712
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-163-star-2",
+        "name": "Laan",
+        "position": {
+          "x": 201.336,
+          "y": 211.996,
+          "z": -190.697
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-164",
+    "type": "system",
+    "name": "Nario System",
+    "position": {
+      "x": 195.294,
+      "y": 329.807,
+      "z": -320.869
+    },
+    "stars": [
+      {
+        "id": "system-164-star-1",
+        "name": "Aryor",
+        "position": {
+          "x": 195.294,
+          "y": 329.807,
+          "z": -320.869
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-165",
+    "type": "system",
+    "name": "Ulhalgar System",
+    "position": {
+      "x": 367.765,
+      "y": 134.595,
+      "z": 378.234
+    },
+    "stars": [
+      {
+        "id": "system-165-star-1",
+        "name": "Quakella",
+        "position": {
+          "x": 367.765,
+          "y": 134.595,
+          "z": 378.234
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-166",
+    "type": "system",
+    "name": "Halan System",
+    "position": {
+      "x": 373.736,
+      "y": -172.141,
+      "z": -190.379
+    },
+    "stars": [
+      {
+        "id": "system-166-star-1",
+        "name": "Fiyorbe",
+        "position": {
+          "x": 373.73,
+          "y": -172.141,
+          "z": -190.376
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-166-star-2",
+        "name": "Halwenkel-I",
+        "position": {
+          "x": 373.742,
+          "y": -172.141,
+          "z": -190.382
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-167",
+    "type": "system",
+    "name": "Orsellin System",
+    "position": {
+      "x": 197.079,
+      "y": 328.944,
+      "z": -322.215
+    },
+    "stars": [
+      {
+        "id": "system-167-star-1",
+        "name": "Beka",
+        "position": {
+          "x": 197.079,
+          "y": 328.944,
+          "z": -322.215
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-168",
+    "type": "system",
+    "name": "Orsel System",
+    "position": {
+      "x": 135.815,
+      "y": 271.014,
+      "z": 213.174
+    },
+    "stars": [
+      {
+        "id": "system-168-star-1",
+        "name": "Wenranzen-P",
+        "position": {
+          "x": 135.826,
+          "y": 271.018,
+          "z": 213.169
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-168-star-2",
+        "name": "Alcorwen",
+        "position": {
+          "x": 135.823,
+          "y": 270.998,
+          "z": 213.181
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-168-star-3",
+        "name": "Kelvor",
+        "position": {
+          "x": 135.797,
+          "y": 271.025,
+          "z": 213.172
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-169",
+    "type": "system",
+    "name": "Tanhalxe-E System",
+    "position": {
+      "x": -252.218,
+      "y": -193.298,
+      "z": 246.903
+    },
+    "stars": [
+      {
+        "id": "system-169-star-1",
+        "name": "Fivorsel",
+        "position": {
+          "x": -252.221,
+          "y": -193.299,
+          "z": 246.913
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-169-star-2",
+        "name": "Narselden",
+        "position": {
+          "x": -252.215,
+          "y": -193.297,
+          "z": 246.892
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-170",
+    "type": "system",
+    "name": "Orel System",
+    "position": {
+      "x": 396.944,
+      "y": -290.625,
+      "z": -64.447
+    },
+    "stars": [
+      {
+        "id": "system-170-star-1",
+        "name": "Kelka",
+        "position": {
+          "x": 396.944,
+          "y": -290.625,
+          "z": -64.447
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-171",
+    "type": "system",
+    "name": "Elbelul System",
+    "position": {
+      "x": -252.371,
+      "y": -191.752,
+      "z": 249.512
+    },
+    "stars": [
+      {
+        "id": "system-171-star-1",
+        "name": "Halhal",
+        "position": {
+          "x": -252.368,
+          "y": -191.762,
+          "z": 249.514
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-171-star-2",
+        "name": "Vorar-E",
+        "position": {
+          "x": -252.374,
+          "y": -191.743,
+          "z": 249.51
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-172",
+    "type": "system",
+    "name": "Garden System",
+    "position": {
+      "x": 168.977,
+      "y": 267.998,
+      "z": -42.995
+    },
+    "stars": [
+      {
+        "id": "system-172-star-1",
+        "name": "Halphael",
+        "position": {
+          "x": 168.973,
+          "y": 267.998,
+          "z": -43.004
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-172-star-2",
+        "name": "Ranalar",
+        "position": {
+          "x": 168.981,
+          "y": 267.997,
+          "z": -42.986
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-173",
+    "type": "system",
+    "name": "Rancorwen System",
+    "position": {
+      "x": 195.462,
+      "y": 326.329,
+      "z": -322.767
+    },
+    "stars": [
+      {
+        "id": "system-173-star-1",
+        "name": "Narorpha-L",
+        "position": {
+          "x": 195.462,
+          "y": 326.329,
+          "z": -322.767
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-174",
+    "type": "system",
+    "name": "Daar-J System",
+    "position": {
+      "x": -252.872,
+      "y": -190.818,
+      "z": 245.472
+    },
+    "stars": [
+      {
+        "id": "system-174-star-1",
+        "name": "Wenkelxe",
+        "position": {
+          "x": -252.872,
+          "y": -190.818,
+          "z": 245.472
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-175",
+    "type": "system",
+    "name": "Bear System",
+    "position": {
+      "x": 490.657,
+      "y": -247.62,
+      "z": 234.955
+    },
+    "stars": [
+      {
+        "id": "system-175-star-1",
+        "name": "Kelxe",
+        "position": {
+          "x": 490.657,
+          "y": -247.62,
+          "z": 234.955
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-176",
+    "type": "system",
+    "name": "Eldaka System",
+    "position": {
+      "x": 194.441,
+      "y": 328.341,
+      "z": -325.283
+    },
+    "stars": [
+      {
+        "id": "system-176-star-1",
+        "name": "Yoryoryor-A",
+        "position": {
+          "x": 194.436,
+          "y": 328.352,
+          "z": -325.289
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-176-star-2",
+        "name": "Alquanar-K",
+        "position": {
+          "x": 194.446,
+          "y": 328.33,
+          "z": -325.277
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-177",
+    "type": "system",
+    "name": "Ioyor-Y System",
+    "position": {
+      "x": 369.112,
+      "y": 136.532,
+      "z": 378.609
+    },
+    "stars": [
+      {
+        "id": "system-177-star-1",
+        "name": "Tancorkel",
+        "position": {
+          "x": 369.112,
+          "y": 136.532,
+          "z": 378.609
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-178",
+    "type": "system",
+    "name": "Halultan System",
+    "position": {
+      "x": -252.951,
+      "y": -192.616,
+      "z": 248.841
+    },
+    "stars": [
+      {
+        "id": "system-178-star-1",
+        "name": "Belennar-U",
+        "position": {
+          "x": -252.951,
+          "y": -192.616,
+          "z": 248.841
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-179",
+    "type": "system",
+    "name": "Oror System",
+    "position": {
+      "x": -276.2,
+      "y": 142.871,
+      "z": 229.61
+    },
+    "stars": [
+      {
+        "id": "system-179-star-1",
+        "name": "Ulsel",
+        "position": {
+          "x": -276.2,
+          "y": 142.871,
+          "z": 229.61
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-180",
+    "type": "system",
+    "name": "Anio System",
+    "position": {
+      "x": -169.177,
+      "y": -3.939,
+      "z": -66.046
+    },
+    "stars": [
+      {
+        "id": "system-180-star-1",
+        "name": "Ennar",
+        "position": {
+          "x": -169.179,
+          "y": -3.928,
+          "z": -66.05
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-180-star-2",
+        "name": "Gararar",
+        "position": {
+          "x": -169.172,
+          "y": -3.931,
+          "z": -66.047
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-180-star-3",
+        "name": "Zenul",
+        "position": {
+          "x": -169.181,
+          "y": -3.959,
+          "z": -66.042
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-181",
+    "type": "system",
+    "name": "Quaar System",
+    "position": {
+      "x": -253.598,
+      "y": -192.332,
+      "z": 247.927
+    },
+    "stars": [
+      {
+        "id": "system-181-star-1",
+        "name": "Haldavor-H",
+        "position": {
+          "x": -253.598,
+          "y": -192.332,
+          "z": 247.927
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-182",
+    "type": "system",
+    "name": "Iomor System",
+    "position": {
+      "x": 368.267,
+      "y": 136.996,
+      "z": 377.07
+    },
+    "stars": [
+      {
+        "id": "system-182-star-1",
+        "name": "Ardacor-U",
+        "position": {
+          "x": 368.267,
+          "y": 136.996,
+          "z": 377.07
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-183",
+    "type": "system",
+    "name": "Elfi System",
+    "position": {
+      "x": -252.509,
+      "y": -192.749,
+      "z": 247.38
+    },
+    "stars": [
+      {
+        "id": "system-183-star-1",
+        "name": "Wenelvor",
+        "position": {
+          "x": -252.509,
+          "y": -192.749,
+          "z": 247.38
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-184",
+    "type": "system",
+    "name": "Ioquavor System",
+    "position": {
+      "x": 367.466,
+      "y": 134.845,
+      "z": 377.184
+    },
+    "stars": [
+      {
+        "id": "system-184-star-1",
+        "name": "Morsel",
+        "position": {
+          "x": 367.466,
+          "y": 134.845,
+          "z": 377.184
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-185",
+    "type": "system",
+    "name": "Xequaen-H System",
+    "position": {
+      "x": -251.74,
+      "y": -192.547,
+      "z": 247.63
+    },
+    "stars": [
+      {
+        "id": "system-185-star-1",
+        "name": "Enka",
+        "position": {
+          "x": -251.744,
+          "y": -192.543,
+          "z": 247.641
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-185-star-2",
+        "name": "Morel",
+        "position": {
+          "x": -251.736,
+          "y": -192.552,
+          "z": 247.618
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-186",
+    "type": "system",
+    "name": "Beldacor-G System",
+    "position": {
+      "x": 195.839,
+      "y": 328.382,
+      "z": -322.381
+    },
+    "stars": [
+      {
+        "id": "system-186-star-1",
+        "name": "Selanhal",
+        "position": {
+          "x": 195.839,
+          "y": 328.382,
+          "z": -322.381
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-187",
+    "type": "system",
+    "name": "Daor System",
+    "position": {
+      "x": 58.964,
+      "y": -474.252,
+      "z": 378.422
+    },
+    "stars": [
+      {
+        "id": "system-187-star-1",
+        "name": "Narmorgar",
+        "position": {
+          "x": 58.964,
+          "y": -474.252,
+          "z": 378.422
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-188",
+    "type": "system",
+    "name": "Denhal System",
+    "position": {
+      "x": 369.397,
+      "y": 136.737,
+      "z": 376.319
+    },
+    "stars": [
+      {
+        "id": "system-188-star-1",
+        "name": "Ulvorda",
+        "position": {
+          "x": 369.397,
+          "y": 136.737,
+          "z": 376.319
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-189",
+    "type": "system",
+    "name": "Haltan System",
+    "position": {
+      "x": 54.083,
+      "y": -472.991,
+      "z": 376.728
+    },
+    "stars": [
+      {
+        "id": "system-189-star-1",
+        "name": "Ransel-T",
+        "position": {
+          "x": 54.083,
+          "y": -472.991,
+          "z": 376.728
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-190",
+    "type": "system",
+    "name": "Vorlin System",
+    "position": {
+      "x": 368.748,
+      "y": 136.405,
+      "z": 377.212
+    },
+    "stars": [
+      {
+        "id": "system-190-star-1",
+        "name": "Zenranden",
+        "position": {
+          "x": 368.748,
+          "y": 136.405,
+          "z": 377.212
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-191",
+    "type": "system",
+    "name": "Quala System",
+    "position": {
+      "x": 57.721,
+      "y": -472.666,
+      "z": 378.327
+    },
+    "stars": [
+      {
+        "id": "system-191-star-1",
+        "name": "Garmorbe",
+        "position": {
+          "x": 57.721,
+          "y": -472.666,
+          "z": 378.327
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-192",
+    "type": "system",
+    "name": "Fiden System",
+    "position": {
+      "x": 194.188,
+      "y": 329.571,
+      "z": -323.004
+    },
+    "stars": [
+      {
+        "id": "system-192-star-1",
+        "name": "Kadenzen",
+        "position": {
+          "x": 194.188,
+          "y": 329.571,
+          "z": -323.004
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-193",
+    "type": "system",
+    "name": "Vorgar System",
+    "position": {
+      "x": 55.672,
+      "y": -473.106,
+      "z": 376.029
+    },
+    "stars": [
+      {
+        "id": "system-193-star-1",
+        "name": "Xedala",
+        "position": {
+          "x": 55.672,
+          "y": -473.106,
+          "z": 376.029
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-194",
+    "type": "system",
+    "name": "Yoral System",
+    "position": {
+      "x": 195.246,
+      "y": 327.603,
+      "z": -322.914
+    },
+    "stars": [
+      {
+        "id": "system-194-star-1",
+        "name": "Yorda",
+        "position": {
+          "x": 195.246,
+          "y": 327.603,
+          "z": -322.914
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-195",
+    "type": "system",
+    "name": "Wenyor System",
+    "position": {
+      "x": 195.119,
+      "y": 330.001,
+      "z": -322.42
+    },
+    "stars": [
+      {
+        "id": "system-195-star-1",
+        "name": "Phapha",
+        "position": {
+          "x": 195.133,
+          "y": 330.002,
+          "z": -322.422
+        },
+        "radius": 696000,
+        "color": "white"
+      },
+      {
+        "id": "system-195-star-2",
+        "name": "Yorhallin",
+        "position": {
+          "x": 195.104,
+          "y": 329.999,
+          "z": -322.418
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-196",
+    "type": "system",
+    "name": "Anzen System",
+    "position": {
+      "x": -169.978,
+      "y": -3.237,
+      "z": -67.077
+    },
+    "stars": [
+      {
+        "id": "system-196-star-1",
+        "name": "Alarsel",
+        "position": {
+          "x": -169.978,
+          "y": -3.237,
+          "z": -67.077
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-197",
+    "type": "system",
+    "name": "Bellin System",
+    "position": {
+      "x": -329.83,
+      "y": -89.135,
+      "z": 214.195
+    },
+    "stars": [
+      {
+        "id": "system-197-star-1",
+        "name": "Halka",
+        "position": {
+          "x": -329.83,
+          "y": -89.135,
+          "z": 214.195
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-198",
+    "type": "system",
+    "name": "Tanansel System",
+    "position": {
+      "x": -253.004,
+      "y": -192.61,
+      "z": 246.894
+    },
+    "stars": [
+      {
+        "id": "system-198-star-1",
+        "name": "Cornarxe",
+        "position": {
+          "x": -253.004,
+          "y": -192.61,
+          "z": 246.894
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-199",
+    "type": "system",
+    "name": "Besel System",
+    "position": {
+      "x": -176.798,
+      "y": 482.562,
+      "z": -142.06
+    },
+    "stars": [
+      {
+        "id": "system-199-star-1",
+        "name": "Enenal",
+        "position": {
+          "x": -176.798,
+          "y": 482.562,
+          "z": -142.06
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  },
+  {
+    "id": "system-200",
+    "type": "system",
+    "name": "Fidenal System",
+    "position": {
+      "x": 58.108,
+      "y": -472.982,
+      "z": 376.866
+    },
+    "stars": [
+      {
+        "id": "system-200-star-1",
+        "name": "Arka-P",
+        "position": {
+          "x": 58.108,
+          "y": -472.982,
+          "z": 376.866
+        },
+        "radius": 696000,
+        "color": "white"
+      }
+    ]
+  }
+]

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Explorer</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 100%; height: 100%; overflow: auto; font-family: system-ui, sans-serif; background: #fff; }
+      .app { display: flex; align-items: stretch; gap: 16px; min-height: 100vh; padding: 20px; }
+      .panel-column { flex-shrink: 0; }
+      #panel-toggle {
+        display: block; margin-bottom: 8px;
+        background: rgba(10, 12, 24, 0.92); color: #c8d4e8;
+        border: 1px solid rgba(120, 140, 200, 0.3); border-radius: 8px;
+        padding: 6px 12px; cursor: pointer; font-size: 12px;
+      }
+      #panel-toggle:hover { background: rgba(30, 40, 60, 0.95); }
+      #panel {
+        background: rgba(10, 12, 24, 0.92); color: #c8d4e8;
+        border: 1px solid rgba(120, 140, 200, 0.3); border-radius: 8px;
+        padding: 10px 12px; min-width: 180px; max-height: 70vh; overflow-y: auto;
+      }
+      #panel.collapsed { display: none; }
+      #panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; opacity: 0.9; }
+      #panel ul { list-style: none; }
+      #panel li { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+      #panel li.selected { background: rgba(80, 120, 200, 0.35); border-radius: 4px; }
+      #panel button {
+        background: rgba(80, 120, 200, 0.4); color: #e0e8f8; border: 1px solid rgba(120, 160, 255, 0.4);
+        padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 12px;
+      }
+      #panel button:hover { background: rgba(100, 140, 220, 0.6); }
+      #panel .name { flex: 1; font-size: 13px; }
+      #panel .type { font-size: 11px; opacity: 0.7; }
+      .panel-section { margin-bottom: 12px; }
+      .panel-section:last-child { margin-bottom: 0; }
+      .section-head { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.9; margin-bottom: 8px; user-select: none; }
+      .section-head:hover { opacity: 1; }
+      .section-head .chevron { transition: transform 0.2s; }
+      .panel-section.collapsed .section-head .chevron { transform: rotate(-90deg); }
+      .section-content { margin-left: 4px; }
+      .panel-section.collapsed .section-content { display: none; }
+      .nav-controls .row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+      .nav-controls .row:last-child { margin-bottom: 0; }
+      .nav-controls label { font-size: 11px; opacity: 0.8; min-width: 52px; }
+      .nav-controls .btn-group { display: flex; gap: 4px; flex-wrap: wrap; }
+      .nav-controls button.small { padding: 4px 8px; font-size: 11px; }
+      .nav-controls .camera-readout { font-size: 10px; font-family: ui-monospace, monospace; opacity: 0.9; margin-bottom: 6px; word-break: break-all; }
+      .scene-column {
+        flex: 1;
+        min-width: 0;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        container-type: size;
+      }
+      #scene-container {
+        width: min(100cqw, 100cqh);
+        aspect-ratio: 1;
+        border: 2px solid #333;
+        overflow: hidden;
+        background: #000011;
+      }
+      #canvas { display: block; width: 100%; height: 100%; }
+      .context-menu {
+        position: fixed;
+        z-index: 1000;
+        min-width: 180px;
+        background: rgba(10, 12, 24, 0.96);
+        color: #e0e8f8;
+        border: 1px solid rgba(120, 140, 200, 0.35);
+        border-radius: 10px;
+        padding: 6px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      }
+      .context-menu.hidden { display: none; }
+      .context-menu button {
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: 0;
+        color: inherit;
+        padding: 8px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+      .context-menu button:hover { background: rgba(80, 120, 200, 0.25); }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="panel-column">
+        <button type="button" id="panel-toggle" aria-label="Toggle panel">Hide panel</button>
+        <div id="panel">
+          <div class="panel-section" id="nav-section">
+            <div class="section-head" id="nav-section-head" aria-expanded="true"><span class="chevron">▼</span> Navigation</div>
+            <div class="section-content">
+              <div class="nav-controls" id="nav-controls"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scene-column">
+        <div id="scene-container">
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+    </div>
+    <div id="context-menu" class="context-menu hidden" role="menu" aria-hidden="true"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
