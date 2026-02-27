@@ -1,0 +1,34 @@
+name: Cursor AI Review (on Ready for Review)
+
+on:
+  pull_request:
+    types: [ready_for_review]
+
+jobs:
+  cursor_review:
+    # Skip if somehow still draft
+    if: ${{ github.event.pull_request.draft == false }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Cursor CLI
+        run: curl https://cursor.com/install -fsS | bash
+        # Cursor publishes this install command for the CLI. :contentReference[oaicite:3]{index=3}
+
+      - name: Run Cursor PR review
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # The exact review command is documented in Cursor's "Code Review with Cursor CLI" recipe.
+          # Replace the line below with the command from that recipe for posting a PR review/comment.
+          cursor-agent --help
