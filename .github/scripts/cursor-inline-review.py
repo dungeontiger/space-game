@@ -29,7 +29,7 @@ For each substantive issue (bug, security, clarity, style), output exactly one J
 
 Output ONLY a JSON array of these objects. No markdown, no code fence, no other text. One array only.
 If you find no issues, output: []
-Example format: [{"path":"src/a.ts","line":10,"body":"Prefer const."}]"""
+Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
 
     env = os.environ.copy()
     env["GH_PR_NUMBER"] = str(pr_number)
