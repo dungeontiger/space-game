@@ -92,27 +92,30 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
         print("No valid comments to post")
         sys.exit(0)
 
-    # Build review payload: commit_id, event, body (summary), comments
-    payload = {
-        "commit_id": head_sha,
-        "event": "COMMENT",
-        "body": f"Cursor AI review ({len(out)} comment(s) on the diff).",
-        "comments": out,
-    }
-    payload_bytes = json.dumps(payload).encode("utf-8")
-
-    url = f"/repos/{repo}/pulls/{pr_number}/reviews"
-    r = subprocess.run(
-        ["gh", "api", "-X", "POST", url, "--input", "-"],
-        input=payload_bytes,
-        capture_output=True,
-        env={**os.environ, "GH_TOKEN": os.environ.get("GH_TOKEN", "")},
-        timeout=30,
-    )
-    if r.returncode != 0:
-        print("gh api failed:", r.stderr.decode(), file=sys.stderr)
-        sys.exit(1)
-    print(f"Posted {len(out)} review comment(s)")
+    # Post each comment via "Create a review comment" (accepts line/side); batch "Create review" requires position.
+    url_base = f"/repos/{repo}/pulls/{pr_number}/comments"
+    posted = 0
+    for c in out:
+        payload = {
+            "commit_id": head_sha,
+            "path": c["path"],
+            "line": c["line"],
+            "side": c["side"],
+            "body": c["body"],
+        }
+        payload_bytes = json.dumps(payload).encode("utf-8")
+        r = subprocess.run(
+            ["gh", "api", "-X", "POST", url_base, "--input", "-"],
+            input=payload_bytes,
+            capture_output=True,
+            env={**os.environ, "GH_TOKEN": os.environ.get("GH_TOKEN", "")},
+            timeout=30,
+        )
+        if r.returncode != 0:
+            print(f"gh api failed for {c['path']}:{c['line']}:", r.stderr.decode(), file=sys.stderr)
+            sys.exit(1)
+        posted += 1
+    print(f"Posted {posted} review comment(s)")
 
 
 if __name__ == "__main__":
