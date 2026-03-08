@@ -11,6 +11,28 @@ import subprocess
 import sys
 
 
+def _extract_json_array(raw: str):
+    """Find the outermost balanced [...] that parses as a JSON array; narrative text with [ or ] won't break it."""
+    for i in range(len(raw)):
+        if raw[i] != "[":
+            continue
+        depth = 0
+        for j in range(i, len(raw)):
+            if raw[j] == "[":
+                depth += 1
+            elif raw[j] == "]":
+                depth -= 1
+                if depth == 0:
+                    try:
+                        parsed = json.loads(raw[i : j + 1])
+                        if isinstance(parsed, list):
+                            return parsed
+                    except json.JSONDecodeError:
+                        pass
+                    break
+    return []
+
+
 def main():
     pr_number = os.environ.get("PR_NUMBER")
     head_sha = os.environ.get("HEAD_SHA")
@@ -54,7 +76,7 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
     raw = proc.stdout or ""
     if not raw.strip():
         print("No output from cursor-agent", file=sys.stderr)
-        sys.exit(0)
+        sys.exit(1)
 
     # Extract JSON array from stdout only (allow ```json ... ``` or raw [...])
     comments = []
@@ -65,14 +87,8 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
             comments = json.loads(code.group(1).strip())
         except json.JSONDecodeError:
             pass
-    if not comments and "[" in raw and "]" in raw:
-        start = raw.index("[")
-        end = raw.rindex("]") + 1
-        if end > start:
-            try:
-                comments = json.loads(raw[start:end])
-            except json.JSONDecodeError:
-                pass
+    if not comments:
+        comments = _extract_json_array(raw)
     if not isinstance(comments, list):
         comments = []
 
@@ -101,34 +117,43 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
         print("No valid comments to post")
         sys.exit(0)
 
-    # Fetch existing review comments so we don't repeat still-valid ones.
+    # Fetch all existing review comments (paginated) so we don't repeat still-valid ones.
     existing_key = set()
-    list_url = f"/repos/{repo}/pulls/{pr_number}/comments?per_page=100"
-    r = subprocess.run(
-        ["gh", "api", list_url],
-        capture_output=True,
-        text=True,
-        env=os.environ,
-        timeout=30,
-    )
-    if r.returncode == 0 and r.stdout.strip():
+    per_page = 100
+    page = 1
+    while True:
+        list_url = f"/repos/{repo}/pulls/{pr_number}/comments?per_page={per_page}&page={page}"
+        r = subprocess.run(
+            ["gh", "api", list_url],
+            capture_output=True,
+            text=True,
+            env=os.environ,
+            timeout=30,
+        )
+        if r.returncode != 0 or not r.stdout.strip():
+            break
         try:
             existing_list = json.loads(r.stdout)
-            if isinstance(existing_list, list):
-                for ex in existing_list:
-                    if isinstance(ex, dict):
-                        p = ex.get("path")
-                        ln = ex.get("line")
-                        b = (ex.get("body") or "").strip()
-                        if p is not None and ln is not None:
-                            existing_key.add((str(p), int(ln), b))
+            if not isinstance(existing_list, list):
+                break
+            for ex in existing_list:
+                if isinstance(ex, dict):
+                    p = ex.get("path")
+                    ln = ex.get("line")
+                    b = (ex.get("body") or "").strip()
+                    if p is not None and ln is not None:
+                        existing_key.add((str(p), int(ln), b))
+            if len(existing_list) < per_page:
+                break
+            page += 1
         except (json.JSONDecodeError, TypeError, ValueError):
-            pass
+            break
 
     # Post only comments that don't already exist (same path, line, body).
     url_base = f"/repos/{repo}/pulls/{pr_number}/comments"
     posted = 0
     skipped = 0
+    failed = 0
     for c in out:
         key = (c["path"], c["line"], c["body"])
         if key in existing_key:
@@ -151,12 +176,17 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
         )
         if r.returncode != 0:
             print(f"gh api failed for {c['path']}:{c['line']}:", r.stderr.decode(), file=sys.stderr)
-            sys.exit(1)
+            failed += 1
+            continue
         posted += 1
     msg = f"Posted {posted} review comment(s)"
     if skipped:
         msg += f" ({skipped} already present, skipped)"
+    if failed:
+        msg += f"; {failed} failed"
     print(msg)
+    if failed:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

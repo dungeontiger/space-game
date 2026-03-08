@@ -31,8 +31,8 @@ jobs:
           # Execute the installer
           bash install_cursor.sh
           
-          # Manually add the binary to the GitHub Action path
-          echo "$HOME/.cursor/bin" >> $GITHUB_PATH
+          # Manually add the binary to the GitHub Action path (installer puts symlinks in ~/.local/bin)
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
         shell: bash
       - name: Run Cursor PR review and post inline comments
         env:
