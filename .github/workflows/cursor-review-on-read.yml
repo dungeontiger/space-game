@@ -19,9 +19,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Cursor CLI
-        run: curl https://cursor.com/install -fsS | bash
-        # Cursor publishes this install command for the CLI. :contentReference[oaicite:3]{index=3}
+      - name: Add Cursor APT GPG key
+        run: |
+          curl -fsSL https://downloads.cursor.com/keys/anysphere.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cursor.gpg > /dev/null
+
+      - name: Add Cursor APT repository
+        run: |
+          echo "deb [arch=amd64,arm64 signed-by=/etc/apt/keyrings/cursor.gpg] https://downloads.cursor.com/apt stable main" | sudo tee /etc/apt/sources.list.d/cursor.list > /dev/null
+
+      - name: Install Cursor
+        run: sudo apt update && sudo apt install -y cursor
 
       - name: Run Cursor PR review and post inline comments
         env:
