@@ -4,6 +4,10 @@ on:
   pull_request:
     types: [ready_for_review, synchronize]
 
+concurrency:
+  group: cursor-review-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   cursor_review:
     if: ${{ github.event.pull_request.draft == false }}

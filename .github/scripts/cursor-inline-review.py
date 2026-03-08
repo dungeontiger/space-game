@@ -31,15 +31,12 @@ Output ONLY a JSON array of these objects. No markdown, no code fence, no other 
 If you find no issues, output: []
 Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
 
-    env = os.environ.copy()
-    env["GH_PR_NUMBER"] = str(pr_number)
-
     proc = subprocess.run(
         ["cursor-agent", "--print", "--trust"],
         input=prompt,
         capture_output=True,
         text=True,
-        env=env,
+        env=os.environ,
         timeout=600,
     )
     if proc.returncode != 0:
@@ -102,10 +99,39 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
         print("No valid comments to post")
         sys.exit(0)
 
-    # Post each comment via "Create a review comment" (accepts line/side); batch "Create review" requires position.
+    # Fetch existing review comments so we don't repeat still-valid ones.
+    existing_key = set()
+    list_url = f"/repos/{repo}/pulls/{pr_number}/comments?per_page=100"
+    r = subprocess.run(
+        ["gh", "api", list_url],
+        capture_output=True,
+        text=True,
+        env=os.environ,
+        timeout=30,
+    )
+    if r.returncode == 0 and r.stdout.strip():
+        try:
+            existing_list = json.loads(r.stdout)
+            if isinstance(existing_list, list):
+                for ex in existing_list:
+                    if isinstance(ex, dict):
+                        p = ex.get("path")
+                        ln = ex.get("line")
+                        b = (ex.get("body") or "").strip()
+                        if p is not None and ln is not None:
+                            existing_key.add((str(p), int(ln), b))
+        except (json.JSONDecodeError, TypeError, ValueError):
+            pass
+
+    # Post only comments that don't already exist (same path, line, body).
     url_base = f"/repos/{repo}/pulls/{pr_number}/comments"
     posted = 0
+    skipped = 0
     for c in out:
+        key = (c["path"], c["line"], c["body"])
+        if key in existing_key:
+            skipped += 1
+            continue
         payload = {
             "commit_id": head_sha,
             "path": c["path"],
@@ -118,14 +144,17 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
             ["gh", "api", "-X", "POST", url_base, "--input", "-"],
             input=payload_bytes,
             capture_output=True,
-            env={**os.environ, "GH_TOKEN": os.environ.get("GH_TOKEN", "")},
+            env=os.environ,
             timeout=30,
         )
         if r.returncode != 0:
             print(f"gh api failed for {c['path']}:{c['line']}:", r.stderr.decode(), file=sys.stderr)
             sys.exit(1)
         posted += 1
-    print(f"Posted {posted} review comment(s)")
+    msg = f"Posted {posted} review comment(s)"
+    if skipped:
+        msg += f" ({skipped} already present, skipped)"
+    print(msg)
 
 
 if __name__ == "__main__":
