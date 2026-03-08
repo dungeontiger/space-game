@@ -20,9 +20,16 @@ jobs:
           fetch-depth: 0
 
       - name: Install Cursor CLI
-        # APT repo (downloads.cursor.com/apt) returns 403 from GitHub Actions; use documented install script.
-        run: curl -fsSL https://cursor.com/install | bash
-
+        run: |
+          # Download the installer script directly
+          curl -fsSL https://cursor.com/install -o install_cursor.sh
+          
+          # Execute the installer
+          bash install_cursor.sh
+          
+          # Manually add the binary to the GitHub Action path
+          echo "$HOME/.cursor/bin" >> $GITHUB_PATH
+        shell: bash
       - name: Run Cursor PR review and post inline comments
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
