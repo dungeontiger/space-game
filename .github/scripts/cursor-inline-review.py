@@ -31,6 +31,8 @@ Output ONLY a JSON array of these objects. No markdown, no code fence, no other 
 If you find no issues, output: []
 Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
 
+    # --trust is required for non-interactive CI (no approval prompts). Blast radius is limited
+    # by .cursor/cli.json, which allows only Shell(gh) so the agent can run `gh pr diff` and nothing else.
     proc = subprocess.run(
         ["cursor-agent", "--print", "--trust"],
         input=prompt,
