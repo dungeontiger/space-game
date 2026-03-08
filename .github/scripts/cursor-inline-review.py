@@ -12,24 +12,19 @@ import sys
 
 
 def _extract_json_array(raw: str):
-    """Find the outermost balanced [...] that parses as a JSON array; narrative text with [ or ] won't break it."""
-    for i in range(len(raw)):
-        if raw[i] != "[":
+    """Find a [...] substring that parses as a JSON array via json.loads (handles [ and ] inside string values)."""
+    start = raw.find("[")
+    if start == -1:
+        return []
+    for end in range(len(raw) - 1, start, -1):
+        if raw[end] != "]":
             continue
-        depth = 0
-        for j in range(i, len(raw)):
-            if raw[j] == "[":
-                depth += 1
-            elif raw[j] == "]":
-                depth -= 1
-                if depth == 0:
-                    try:
-                        parsed = json.loads(raw[i : j + 1])
-                        if isinstance(parsed, list):
-                            return parsed
-                    except json.JSONDecodeError:
-                        pass
-                    break
+        try:
+            parsed = json.loads(raw[start : end + 1])
+            if isinstance(parsed, list):
+                return parsed
+        except json.JSONDecodeError:
+            pass
     return []
 
 
@@ -54,7 +49,8 @@ If you find no issues, output: []
 Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
 
     # --trust is required for non-interactive CI (no approval prompts). Blast radius is limited
-    # by .cursor/cli.json, which allows only Shell(gh) so the agent can run `gh pr diff` and nothing else.
+    # by .cursor/cli.json: only Shell(gh) is allowed, and Write(.cursor/**) is denied so the
+    # agent cannot modify its own config to escalate permissions.
     proc = subprocess.run(
         ["cursor-agent", "--print", "--trust"],
         input=prompt,
@@ -175,7 +171,7 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
             timeout=30,
         )
         if r.returncode != 0:
-            print(f"gh api failed for {c['path']}:{c['line']}:", r.stderr.decode(), file=sys.stderr)
+            print(f"gh api failed for {c['path']}:{c['line']}:", r.stderr.decode(errors='replace'), file=sys.stderr)
             failed += 1
             continue
         posted += 1

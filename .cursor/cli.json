@@ -3,6 +3,9 @@
     "allow": [
       "Shell(gh)"
     ],
-    "deny": []
+    "deny": [
+      "Write(.cursor/**)",
+      "Write(**/.cursor/**)"
+    ]
   }
 }
