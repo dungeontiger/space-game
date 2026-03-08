@@ -42,12 +42,22 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
         env=env,
         timeout=600,
     )
-    raw = (proc.stdout or "") + (proc.stderr or "")
+    if proc.returncode != 0:
+        if proc.stderr:
+            print(proc.stderr, file=sys.stderr)
+        if proc.stdout:
+            print(proc.stdout, file=sys.stderr)
+        sys.exit(1)
+
+    if proc.stderr:
+        print(proc.stderr, file=sys.stderr)
+
+    raw = proc.stdout or ""
     if not raw.strip():
         print("No output from cursor-agent", file=sys.stderr)
         sys.exit(0)
 
-    # Extract JSON array from output (allow ```json ... ``` or raw [...])
+    # Extract JSON array from stdout only (allow ```json ... ``` or raw [...])
     comments = []
     # Prefer block inside ```json ... ```
     code = re.search(r"```(?:json)?\s*([\s\S]*?)```", raw)
