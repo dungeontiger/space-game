@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(gh)"
+    ],
+    "deny": [
+      "Write(.cursor/**)",
+      "Write(**/.cursor/**)"
+    ]
+  }
+}

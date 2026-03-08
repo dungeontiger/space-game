@@ -1,3 +1,5 @@
 # Space Game project
 
 Default project root: c:\dev\space-game. All paths and commands for this project are relative to this directory.
+
+When creating or helping with a new pull request, always create it in draft mode (e.g. "Create draft pull request" on GitHub, or `gh pr create --draft` when using GitHub CLI).

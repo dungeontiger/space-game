@@ -1,0 +1,45 @@
+name: Cursor AI Review (on Ready for Review)
+
+on:
+  pull_request:
+    types: [ready_for_review, synchronize]
+
+concurrency:
+  group: cursor-review-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  cursor_review:
+    if: ${{ github.event.pull_request.draft == false }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Cursor CLI
+        run: |
+          # Download the installer script directly
+          curl -fsSL https://cursor.com/install -o install_cursor.sh
+          
+          # Execute the installer
+          bash install_cursor.sh
+          
+          # Manually add the binary to the GitHub Action path (installer puts symlinks in ~/.local/bin)
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+        shell: bash
+      - name: Run Cursor PR review and post inline comments
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
+        run: |
+          python .github/scripts/cursor-inline-review.py
