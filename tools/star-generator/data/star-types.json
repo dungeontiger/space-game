@@ -1,0 +1,72 @@
+[
+  {
+    "id": "M",
+    "spectralClass": "M",
+    "name": "Red Dwarf",
+    "diameterKmMin": 220000,
+    "diameterKmMax": 700000,
+    "massSolarMin": 0.08,
+    "massSolarMax": 0.5,
+    "color": "#ff6b4a"
+  },
+  {
+    "id": "K",
+    "spectralClass": "K",
+    "name": "Orange Dwarf",
+    "diameterKmMin": 970000,
+    "diameterKmMax": 1250000,
+    "massSolarMin": 0.5,
+    "massSolarMax": 0.8,
+    "color": "#ff9c5c"
+  },
+  {
+    "id": "G",
+    "spectralClass": "G",
+    "name": "Yellow Dwarf",
+    "diameterKmMin": 1320000,
+    "diameterKmMax": 1460000,
+    "massSolarMin": 0.8,
+    "massSolarMax": 1.1,
+    "color": "#fff5d4"
+  },
+  {
+    "id": "F",
+    "spectralClass": "F",
+    "name": "Yellow-White Star",
+    "diameterKmMin": 1530000,
+    "diameterKmMax": 2090000,
+    "massSolarMin": 1.0,
+    "massSolarMax": 1.5,
+    "color": "#fff4ea"
+  },
+  {
+    "id": "A",
+    "spectralClass": "A",
+    "name": "White Star",
+    "diameterKmMin": 2090000,
+    "diameterKmMax": 3480000,
+    "massSolarMin": 1.5,
+    "massSolarMax": 3.0,
+    "color": "#f2f2ff"
+  },
+  {
+    "id": "B",
+    "spectralClass": "B",
+    "name": "Blue Star",
+    "diameterKmMin": 4180000,
+    "diameterKmMax": 8350000,
+    "massSolarMin": 3.0,
+    "massSolarMax": 20,
+    "color": "#aacfff"
+  },
+  {
+    "id": "O",
+    "spectralClass": "O",
+    "name": "O-type Star",
+    "diameterKmMin": 11100000,
+    "diameterKmMax": 27800000,
+    "massSolarMin": 20,
+    "massSolarMax": 100,
+    "color": "#6b9fff"
+  }
+]

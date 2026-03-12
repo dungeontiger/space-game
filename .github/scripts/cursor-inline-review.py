@@ -172,19 +172,32 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
             timeout=30,
         )
         if r.returncode != 0:
-            stderr_text = r.stderr.decode(errors="replace")
-            # GitHub returns HTTP 422 when the path/line is not part of the PR diff.
-            # Treat these as non-fatal (just skip posting) so the workflow still succeeds.
-            if "Validation Failed" in stderr_text and "HTTP 422" in stderr_text:
+            # gh prints the API response body (JSON) to stdout on error and a
+            # human-readable message to stderr. Prefer structured detection by
+            # parsing the JSON response instead of substring matching stderr.
+            body_text = (r.stdout or b"").decode("utf-8", errors="replace").strip()
+            status = None
+            if body_text:
+                # Try to parse the body as JSON; if that fails, fall back to raw text.
+                try:
+                    data = json.loads(body_text)
+                    # The GitHub API includes a string HTTP status in error bodies, e.g. "422".
+                    status = str(data.get("status") or "").strip()
+                except json.JSONDecodeError:
+                    pass
+            if status == "422":
+                # Treat all 422 Validation Failed responses as non-fatal; these include
+                # cases where the requested path/line is not part of the PR diff.
                 print(
-                    f"gh api validation failed for {c['path']}:{c['line']} "
-                    f"(likely not in diff): {stderr_text}",
+                    f"gh api validation failed for {c['path']}:{c['line']}: {body_text}",
                     file=sys.stderr,
                 )
                 validation_failed += 1
                 continue
+
+            stderr_text = (r.stderr or b"").decode("utf-8", errors="replace").strip()
             print(
-                f"gh api failed for {c['path']}:{c['line']}: {stderr_text}",
+                f"gh api failed for {c['path']}:{c['line']}: {stderr_text or body_text}",
                 file=sys.stderr,
             )
             fatal_failed += 1

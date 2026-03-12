@@ -249,7 +249,7 @@ function animate(): void {
     cameraHelper.visible = false;
   }
   const viewportHeight = renderer.domElement.clientHeight;
-  updateStarApparentSizes(scene, camera, viewportHeight);
+  updateStarApparentSizes(scene, camera, viewportHeight, 'default');
   if (axesVisible && axesGroup) updateAxisLabelSizes(axesGroup, camera, viewportHeight);
   if (selectedIds.size > 0) {
     updateSelectionMarkerRotation(selectionGroup, scene, camera, viewportHeight);

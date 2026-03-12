@@ -1,0 +1,67 @@
+[
+  {
+    "starCount": 1,
+    "description": "Single star",
+    "starTypeChances": {
+      "M": 70,
+      "K": 20,
+      "G": 7,
+      "F": 2,
+      "A": 0.7,
+      "B": 0.25,
+      "O": 0.05
+    }
+  },
+  {
+    "starCount": 2,
+    "description": "Binary system",
+    "starTypeChances": {
+      "M": 55,
+      "K": 28,
+      "G": 10,
+      "F": 4,
+      "A": 2,
+      "B": 0.8,
+      "O": 0.2
+    }
+  },
+  {
+    "starCount": 3,
+    "description": "Triple system",
+    "starTypeChances": {
+      "M": 62,
+      "K": 25,
+      "G": 8,
+      "F": 3,
+      "A": 1.5,
+      "B": 0.4,
+      "O": 0.1
+    }
+  },
+  {
+    "starCount": 4,
+    "description": "Quadruple system",
+    "starTypeChances": {
+      "M": 68,
+      "K": 22,
+      "G": 6,
+      "F": 2.5,
+      "A": 1.2,
+      "B": 0.25,
+      "O": 0.05
+    }
+  },
+  {
+    "starCount": 5,
+    "description": "Quintuple system",
+    "starTypeChances": {
+      "M": 72,
+      "K": 20,
+      "G": 5,
+      "F": 2,
+      "A": 0.8,
+      "B": 0.15,
+      "O": 0.05
+    }
+  }
+]
