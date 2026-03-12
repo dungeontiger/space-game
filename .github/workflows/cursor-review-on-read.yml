@@ -1,8 +1,9 @@
-name: Cursor AI Review (on Ready for Review)
+name: Cursor AI Review (manual only)
 
+# Disabled automatic runs because Cursor PR review is too expensive.
+# This workflow is now manual-only via the GitHub UI.
 on:
-  pull_request:
-    types: [ready_for_review, synchronize]
+  workflow_dispatch:
 
 concurrency:
   group: cursor-review-pr-${{ github.event.pull_request.number }}

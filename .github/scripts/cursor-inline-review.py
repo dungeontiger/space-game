@@ -60,10 +60,26 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
         timeout=600,
     )
     if proc.returncode != 0:
-        if proc.stderr:
-            print(proc.stderr, file=sys.stderr)
-        if proc.stdout:
-            print(proc.stdout, file=sys.stderr)
+        stderr_text = (proc.stderr or "").strip()
+        stdout_text = (proc.stdout or "").strip()
+        combined = f"{stderr_text}\n{stdout_text}".strip()
+
+        # If the Cursor API is out of quota or otherwise resource constrained,
+        # treat this as a non-fatal condition so the workflow still succeeds.
+        # Common gRPC-style status codes include "resource_exhausted" and HTTP 429.
+        lowered = combined.lower()
+        if "resource_exhausted" in lowered or "resource exhausted" in lowered or "429" in lowered:
+            print(
+                "Cursor review skipped: Cursor API resource exhausted / rate limited.\n"
+                f"{combined}",
+                file=sys.stderr,
+            )
+            # Exit successfully so the GitHub job passes even though no review was posted.
+            sys.exit(0)
+
+        # Any other non-zero exit from cursor-agent is treated as a hard failure.
+        if combined:
+            print(combined, file=sys.stderr)
         sys.exit(1)
 
     if proc.stderr:
