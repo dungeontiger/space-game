@@ -149,7 +149,8 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
     url_base = f"/repos/{repo}/pulls/{pr_number}/comments"
     posted = 0
     skipped = 0
-    failed = 0
+    validation_failed = 0
+    fatal_failed = 0
     for c in out:
         key = (c["path"], c["line"], c["body"])
         if key in existing_key:
@@ -171,17 +172,35 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
             timeout=30,
         )
         if r.returncode != 0:
-            print(f"gh api failed for {c['path']}:{c['line']}:", r.stderr.decode(errors='replace'), file=sys.stderr)
-            failed += 1
+            stderr_text = r.stderr.decode(errors="replace")
+            # GitHub returns HTTP 422 when the path/line is not part of the PR diff.
+            # Treat these as non-fatal (just skip posting) so the workflow still succeeds.
+            if "Validation Failed" in stderr_text and "HTTP 422" in stderr_text:
+                print(
+                    f"gh api validation failed for {c['path']}:{c['line']} "
+                    f"(likely not in diff): {stderr_text}",
+                    file=sys.stderr,
+                )
+                validation_failed += 1
+                continue
+            print(
+                f"gh api failed for {c['path']}:{c['line']}: {stderr_text}",
+                file=sys.stderr,
+            )
+            fatal_failed += 1
             continue
         posted += 1
     msg = f"Posted {posted} review comment(s)"
     if skipped:
         msg += f" ({skipped} already present, skipped)"
-    if failed:
-        msg += f"; {failed} failed"
+    if validation_failed:
+        msg += f"; {validation_failed} validation failed (non-fatal, likely not in diff)"
+    if fatal_failed:
+        msg += f"; {fatal_failed} failed"
     print(msg)
-    if failed:
+    # Only fail the job for hard errors (auth/network/etc), not for validation
+    # errors that typically happen when a suggested comment is outside the PR diff.
+    if fatal_failed:
         sys.exit(1)
 
 
