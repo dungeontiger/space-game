@@ -83,35 +83,23 @@ export function generateSystems(params: GeneratorParams): GeneratedSystem[] {
 
   const centers =
     params.algorithm === 'clustered'
-      ? Array.from({ length: params.clusterCount }, () => ({
-          x: randRange(rng, -half, half),
-          y: randRange(rng, -half, half),
-          z: randRange(rng, -half, half),
-        }))
+      ? Array.from({ length: params.clusterCount }, () => samplePointInSphere(rng, half))
       : [];
 
   const trySample = (): { x: number; y: number; z: number } | null => {
     if (params.algorithm === 'uniform') {
-      return {
-        x: randRange(rng, -half, half),
-        y: randRange(rng, -half, half),
-        z: randRange(rng, -half, half),
-      };
+      return samplePointInSphere(rng, half);
     }
     if (params.algorithm === 'clustered') {
       const useBackground = rng() < params.backgroundFraction;
       if (useBackground) {
-        return {
-          x: randRange(rng, -half, half),
-          y: randRange(rng, -half, half),
-          z: randRange(rng, -half, half),
-        };
+        return samplePointInSphere(rng, half);
       }
       const c = centers[Math.floor(rng() * centers.length)] ?? { x: 0, y: 0, z: 0 };
       const x = c.x + randNormal(rng) * params.clusterSigmaLy;
       const y = c.y + randNormal(rng) * params.clusterSigmaLy;
       const z = c.z + randNormal(rng) * params.clusterSigmaLy;
-      if (Math.abs(x) > half || Math.abs(y) > half || Math.abs(z) > half) return null;
+      if (Math.hypot(x, y, z) > half) return null;
       return { x, y, z };
     }
     const maxR = half;
@@ -165,11 +153,8 @@ export function generateSystems(params: GeneratorParams): GeneratedSystem[] {
   }
 
   while (systems.length < params.maxSystems) {
-    const center = {
-      x: round3(randRange(rng, -half, half)),
-      y: round3(randRange(rng, -half, half)),
-      z: round3(randRange(rng, -half, half)),
-    };
+    const pt = samplePointInSphere(rng, half);
+    const center = { x: round3(pt.x), y: round3(pt.y), z: round3(pt.z) };
     const numStars = pickSystemSize(rng, params);
     const systemName = uniqueSystemName(rng, usedSystemNames);
     const systemId = `system-${systems.length + 1}`;
@@ -285,4 +270,19 @@ function sampleExponential(rng: () => number, mean: number): number {
 
 function round3(n: number): number {
   return Math.round(n * 1000) / 1000;
+}
+
+/** Uniform random point inside a sphere of given radius (centered at origin). */
+function samplePointInSphere(rng: () => number, radius: number): { x: number; y: number; z: number } {
+  const u = rng();
+  const v = rng();
+  const w = rng();
+  const r = radius * Math.cbrt(u);
+  const theta = 2 * Math.PI * v;
+  const phi = Math.acos(2 * w - 1);
+  return {
+    x: r * Math.sin(phi) * Math.cos(theta),
+    y: r * Math.cos(phi),
+    z: r * Math.sin(phi) * Math.sin(theta),
+  };
 }
