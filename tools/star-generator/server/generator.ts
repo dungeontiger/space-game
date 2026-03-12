@@ -1,4 +1,12 @@
 import type { GeneratorParams } from '../src/lib/schema';
+import {
+  loadGeneratorData,
+  getSystemTypeByStarCount,
+  getStarTypeById,
+  type GeneratorData,
+  type StarTypeEntry,
+  type SystemTypeEntry,
+} from './dataLoader.js';
 
 export type GeneratedStarInSystem = {
   id: string;
@@ -16,9 +24,45 @@ export type GeneratedSystem = {
   stars: GeneratedStarInSystem[];
 };
 
-const AVG_STAR_RADIUS_KM = 696_000;
 /** Small spread (ly) so stars in a system are visually distinct. */
 const SYSTEM_STAR_SPREAD_LY = 0.02;
+
+/** Pick a star type id from system type's starTypeChances (weighted random). */
+function pickStarTypeId(rng: () => number, systemType: SystemTypeEntry): string {
+  const entries = Object.entries(systemType.starTypeChances).filter(([, pct]) => pct > 0);
+  const total = entries.reduce((s, [, pct]) => s + pct, 0);
+  let t = rng() * total;
+  for (const [id, pct] of entries) {
+    t -= pct;
+    if (t <= 0) return id;
+  }
+  return entries[entries.length - 1]?.[0] ?? 'G';
+}
+
+/** Given data and system star count, pick a star type and return radius (km) and color. */
+function pickStarRadiusAndColor(
+  rng: () => number,
+  data: GeneratorData,
+  numStarsInSystem: number,
+): { radiusKm: number; color: string } {
+  const systemType = getSystemTypeByStarCount(data, numStarsInSystem);
+  const starTypes = data.starTypes;
+  const fallback: StarTypeEntry | undefined = starTypes.find((s) => s.id === 'G');
+  if (!systemType) {
+    const st = fallback ?? starTypes[0];
+    const radiusKm = st
+      ? (st.diameterKmMin + (st.diameterKmMax - st.diameterKmMin) * rng()) / 2
+      : 696_000;
+    return { radiusKm, color: st?.color ?? '#fff5d4' };
+  }
+  const starTypeId = pickStarTypeId(rng, systemType);
+  const starType = getStarTypeById(data, starTypeId) ?? fallback ?? starTypes[0];
+  if (!starType) {
+    return { radiusKm: 696_000, color: '#fff5d4' };
+  }
+  const radiusKm = (starType.diameterKmMin + (starType.diameterKmMax - starType.diameterKmMin) * rng()) / 2;
+  return { radiusKm, color: starType.color };
+}
 
 function pickSystemSize(rng: () => number, p: GeneratorParams): number {
   const t = rng() * 100;
@@ -30,6 +74,7 @@ function pickSystemSize(rng: () => number, p: GeneratorParams): number {
 }
 
 export function generateSystems(params: GeneratorParams): GeneratedSystem[] {
+  const data = loadGeneratorData();
   const rng = makeRng(params.seed);
   const half = params.diameterLy / 2;
   const systems: GeneratedSystem[] = [];
@@ -100,12 +145,13 @@ export function generateSystems(params: GeneratorParams): GeneratedSystem[] {
       const z = round3(center.z + offsetZ);
       cx += x; cy += y; cz += z;
       const starName = uniqueStarName(rng, usedStarNames);
+      const { radiusKm, color } = pickStarRadiusAndColor(rng, data, numStars);
       stars.push({
         id: `${systemId}-star-${i + 1}`,
         name: starName,
         position: { x, y, z },
-        radius: AVG_STAR_RADIUS_KM,
-        color: 'white',
+        radius: Math.round(radiusKm),
+        color,
       });
     }
     cx /= numStars; cy /= numStars; cz /= numStars;
@@ -138,12 +184,13 @@ export function generateSystems(params: GeneratorParams): GeneratedSystem[] {
       const z = round3(center.z + offsetZ);
       cx += x; cy += y; cz += z;
       const starName = uniqueStarName(rng, usedStarNames);
+      const { radiusKm, color } = pickStarRadiusAndColor(rng, data, numStars);
       stars.push({
         id: `${systemId}-star-${i + 1}`,
         name: starName,
         position: { x, y, z },
-        radius: AVG_STAR_RADIUS_KM,
-        color: 'white',
+        radius: Math.round(radiusKm),
+        color,
       });
     }
     cx /= numStars; cy /= numStars; cz /= numStars;
