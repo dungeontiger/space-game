@@ -96,12 +96,14 @@ export function initNavControls(
   setAxesVisible: (visible: boolean) => void,
   setSphereVisible: (visible: boolean) => void,
   onDeselectAll: () => void,
+  onStartBoxZoom: () => void,
 ): NavControlsApi {
   const container = document.getElementById('nav-controls');
   const api: NavControlsApi = { updateReadout: () => {} };
   if (!container) return api;
 
   let activeNavAnimCancel: (() => void) | null = null;
+  let zoomDistanceEl: HTMLSpanElement | null = null;
 
   function animateCameraTo(target: THREE.Vector3, cameraPos: THREE.Vector3, durationMs: number): void {
     if (activeNavAnimCancel) activeNavAnimCancel();
@@ -180,7 +182,7 @@ export function initNavControls(
     const target = controls.target;
     const dir = new THREE.Vector3().subVectors(camera.position, target).normalize();
     const dist = controls.getDistance();
-    const newDist = THREE.MathUtils.clamp(dist + delta, 1, 10000);
+    const newDist = THREE.MathUtils.clamp(dist + delta, 0.0001, 10000);
     camera.position.copy(target).addScaledVector(dir, newDist);
   }
 
@@ -220,6 +222,9 @@ export function initNavControls(
   container.appendChild(readoutRow);
   api.updateReadout = (pos: THREE.Vector3) => {
     readoutEl.textContent = `Camera: (${pos.x.toFixed(2)}, ${pos.y.toFixed(2)}, ${pos.z.toFixed(2)})`;
+    if (zoomDistanceEl) {
+      zoomDistanceEl.textContent = `dist: ${controls.getDistance().toFixed(2)}`;
+    }
   };
 
   const originRow = document.createElement('div');
@@ -292,6 +297,17 @@ export function initNavControls(
   deselectRow.appendChild(deselectBtn);
   container.appendChild(deselectRow);
 
+  const boxZoomRow = document.createElement('div');
+  boxZoomRow.className = 'row';
+  const boxZoomBtn = document.createElement('button');
+  boxZoomBtn.type = 'button';
+  boxZoomBtn.textContent = 'Box zoom';
+  boxZoomBtn.addEventListener('click', () => {
+    onStartBoxZoom();
+  });
+  boxZoomRow.appendChild(boxZoomBtn);
+  container.appendChild(boxZoomRow);
+
   const rotateRow = document.createElement('div');
   rotateRow.className = 'row';
   rotateRow.innerHTML = '<label>Rotate</label>';
@@ -327,7 +343,9 @@ export function initNavControls(
 
   const zoomRow = document.createElement('div');
   zoomRow.className = 'row';
-  zoomRow.innerHTML = '<label>Zoom</label>';
+  const zoomLabel = document.createElement('label');
+  zoomLabel.textContent = 'Zoom';
+  zoomRow.appendChild(zoomLabel);
   const zoomGroup = document.createElement('div');
   zoomGroup.className = 'btn-group';
   const zoomIn = document.createElement('button');
@@ -344,6 +362,11 @@ export function initNavControls(
   zoomOut.addEventListener('click', () => zoom(ZOOM_STEP));
   zoomGroup.append(zoomIn, zoomOut);
   zoomRow.appendChild(zoomGroup);
+  zoomDistanceEl = document.createElement('span');
+  zoomDistanceEl.className = 'zoom-distance';
+  zoomDistanceEl.style.marginLeft = '0.5rem';
+  zoomDistanceEl.textContent = `dist: ${controls.getDistance().toFixed(2)}`;
+  zoomRow.appendChild(zoomDistanceEl);
   container.appendChild(zoomRow);
 
   const panRow = document.createElement('div');
