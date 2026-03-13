@@ -60,10 +60,26 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
         timeout=600,
     )
     if proc.returncode != 0:
-        if proc.stderr:
-            print(proc.stderr, file=sys.stderr)
-        if proc.stdout:
-            print(proc.stdout, file=sys.stderr)
+        stderr_text = (proc.stderr or "").strip()
+        stdout_text = (proc.stdout or "").strip()
+        combined = f"{stderr_text}\n{stdout_text}".strip()
+
+        # If the Cursor API is out of quota or otherwise resource constrained,
+        # treat this as a non-fatal condition so the workflow still succeeds.
+        # Common gRPC-style status codes include "resource_exhausted" and HTTP 429.
+        lowered = combined.lower()
+        if "resource_exhausted" in lowered or "resource exhausted" in lowered or "429" in lowered:
+            print(
+                "Cursor review skipped: Cursor API resource exhausted / rate limited.\n"
+                f"{combined}",
+                file=sys.stderr,
+            )
+            # Exit successfully so the GitHub job passes even though no review was posted.
+            sys.exit(0)
+
+        # Any other non-zero exit from cursor-agent is treated as a hard failure.
+        if combined:
+            print(combined, file=sys.stderr)
         sys.exit(1)
 
     if proc.stderr:
@@ -149,7 +165,8 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
     url_base = f"/repos/{repo}/pulls/{pr_number}/comments"
     posted = 0
     skipped = 0
-    failed = 0
+    validation_failed = 0
+    fatal_failed = 0
     for c in out:
         key = (c["path"], c["line"], c["body"])
         if key in existing_key:
@@ -171,17 +188,48 @@ Example format: [{{"path":"src/a.ts","line":10,"body":"Prefer const."}}]"""
             timeout=30,
         )
         if r.returncode != 0:
-            print(f"gh api failed for {c['path']}:{c['line']}:", r.stderr.decode(errors='replace'), file=sys.stderr)
-            failed += 1
+            # gh prints the API response body (JSON) to stdout on error and a
+            # human-readable message to stderr. Prefer structured detection by
+            # parsing the JSON response instead of substring matching stderr.
+            body_text = (r.stdout or b"").decode("utf-8", errors="replace").strip()
+            status = None
+            if body_text:
+                # Try to parse the body as JSON; if that fails, fall back to raw text.
+                try:
+                    data = json.loads(body_text)
+                    # The GitHub API includes a string HTTP status in error bodies, e.g. "422".
+                    status = str(data.get("status") or "").strip()
+                except json.JSONDecodeError:
+                    pass
+            if status == "422":
+                # Treat all 422 Validation Failed responses as non-fatal; these include
+                # cases where the requested path/line is not part of the PR diff.
+                print(
+                    f"gh api validation failed for {c['path']}:{c['line']}: {body_text}",
+                    file=sys.stderr,
+                )
+                validation_failed += 1
+                continue
+
+            stderr_text = (r.stderr or b"").decode("utf-8", errors="replace").strip()
+            print(
+                f"gh api failed for {c['path']}:{c['line']}: {stderr_text or body_text}",
+                file=sys.stderr,
+            )
+            fatal_failed += 1
             continue
         posted += 1
     msg = f"Posted {posted} review comment(s)"
     if skipped:
         msg += f" ({skipped} already present, skipped)"
-    if failed:
-        msg += f"; {failed} failed"
+    if validation_failed:
+        msg += f"; {validation_failed} validation failed (non-fatal, likely not in diff)"
+    if fatal_failed:
+        msg += f"; {fatal_failed} failed"
     print(msg)
-    if failed:
+    # Only fail the job for hard errors (auth/network/etc), not for validation
+    # errors that typically happen when a suggested comment is outside the PR diff.
+    if fatal_failed:
         sys.exit(1)
 
 
