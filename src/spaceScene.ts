@@ -100,6 +100,21 @@ export function updateSpaceScene(scene: THREE.Scene, systems: System[]): void {
   removeStaleSystems(scene, ids);
 }
 
+/** Highlight systems by ID for box-zoom debugging (e.g. turn sprites blue). */
+export function setBoxSelectionHighlight(selectedIds: Set<string>): void {
+  for (const [id, threeObj] of objectMap.entries()) {
+    const isSelected = selectedIds.has(id);
+    threeObj.traverse((child) => {
+      if (!(child instanceof THREE.Sprite)) return;
+      const ud = child.userData as { spaceId?: string };
+      if (ud.spaceId !== id) return;
+      const mat = child.material as THREE.SpriteMaterial;
+      // Base color is white; tint blue when selected.
+      mat.color.set(isSelected ? 0x3366ff : 0xffffff);
+    });
+  }
+}
+
 const _starPos = new THREE.Vector3();
 
 export function getStarDistanceForMaxSizePx(

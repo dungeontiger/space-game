@@ -92,7 +92,7 @@ export function initNavControls(
   camera: THREE.PerspectiveCamera,
   controls: OrbitControls,
   systems: System[],
-  setCameraHelperVisible: (visible: boolean) => void,
+  setZoomDistance: (distance: number) => void,
   setAxesVisible: (visible: boolean) => void,
   setSphereVisible: (visible: boolean) => void,
   onDeselectAll: () => void,
@@ -103,7 +103,7 @@ export function initNavControls(
   if (!container) return api;
 
   let activeNavAnimCancel: (() => void) | null = null;
-  let zoomDistanceEl: HTMLSpanElement | null = null;
+  let zoomDistanceInput: HTMLInputElement | null = null;
 
   function animateCameraTo(target: THREE.Vector3, cameraPos: THREE.Vector3, durationMs: number): void {
     if (activeNavAnimCancel) activeNavAnimCancel();
@@ -146,7 +146,6 @@ export function initNavControls(
   const ZOOM_STEP = 3;
   const PAN_STEP = 2;
   const MOVE_STEP = 2;
-  let cameraHelperOn = false;
   let axesOn = true;
   let sphereOn = false;
 
@@ -222,8 +221,8 @@ export function initNavControls(
   container.appendChild(readoutRow);
   api.updateReadout = (pos: THREE.Vector3) => {
     readoutEl.textContent = `Camera: (${pos.x.toFixed(2)}, ${pos.y.toFixed(2)}, ${pos.z.toFixed(2)})`;
-    if (zoomDistanceEl) {
-      zoomDistanceEl.textContent = `dist: ${controls.getDistance().toFixed(2)}`;
+    if (zoomDistanceInput && document.activeElement !== zoomDistanceInput) {
+      zoomDistanceInput.value = formatZoomDistance(controls.getDistance());
     }
   };
 
@@ -362,11 +361,41 @@ export function initNavControls(
   zoomOut.addEventListener('click', () => zoom(ZOOM_STEP));
   zoomGroup.append(zoomIn, zoomOut);
   zoomRow.appendChild(zoomGroup);
-  zoomDistanceEl = document.createElement('span');
-  zoomDistanceEl.className = 'zoom-distance';
-  zoomDistanceEl.style.marginLeft = '0.5rem';
-  zoomDistanceEl.textContent = `dist: ${controls.getDistance().toFixed(2)}`;
-  zoomRow.appendChild(zoomDistanceEl);
+  const zoomDistLabel = document.createElement('span');
+  zoomDistLabel.textContent = ' dist:';
+  zoomDistLabel.style.marginLeft = '0.5rem';
+  zoomRow.appendChild(zoomDistLabel);
+
+  function formatZoomDistance(d: number): string {
+    if (d === 0 || !Number.isFinite(d)) return '0';
+    const abs = Math.abs(d);
+    if (abs < 0.1 && abs >= 1e-50) return d.toExponential(2);
+    if (abs >= 1e6) return d.toExponential(2);
+    return d.toFixed(2);
+  }
+
+  zoomDistanceInput = document.createElement('input');
+  zoomDistanceInput.type = 'text';
+  zoomDistanceInput.inputMode = 'decimal';
+  zoomDistanceInput.placeholder = 'e.g. 1e-5';
+  zoomDistanceInput.value = formatZoomDistance(controls.getDistance());
+  zoomDistanceInput.className = 'zoom-distance';
+  zoomDistanceInput.style.marginLeft = '0.25rem';
+  zoomDistanceInput.style.width = '6rem';
+  const applyZoomInput = () => {
+    if (!zoomDistanceInput) return;
+    const raw = parseFloat(zoomDistanceInput.value.trim());
+    if (!isFinite(raw)) return;
+    let newDist = raw;
+    if (Math.abs(newDist) < 1e-50) newDist = 1e-50;
+    setZoomDistance(newDist);
+    zoomDistanceInput.value = formatZoomDistance(newDist);
+  };
+  zoomDistanceInput.addEventListener('change', applyZoomInput);
+  zoomDistanceInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') applyZoomInput();
+  });
+  zoomRow.appendChild(zoomDistanceInput);
   container.appendChild(zoomRow);
 
   const panRow = document.createElement('div');
@@ -397,19 +426,6 @@ export function initNavControls(
   panGroup.append(panLeft, panRight, panUp, panDown);
   panRow.appendChild(panGroup);
   container.appendChild(panRow);
-
-  const cameraHelperRow = document.createElement('div');
-  cameraHelperRow.className = 'row';
-  const cameraHelperBtn = document.createElement('button');
-  cameraHelperBtn.type = 'button';
-  cameraHelperBtn.textContent = 'Show camera';
-  cameraHelperBtn.addEventListener('click', () => {
-    cameraHelperOn = !cameraHelperOn;
-    setCameraHelperVisible(cameraHelperOn);
-    cameraHelperBtn.textContent = cameraHelperOn ? 'Hide camera' : 'Show camera';
-  });
-  cameraHelperRow.appendChild(cameraHelperBtn);
-  container.appendChild(cameraHelperRow);
 
   const axesRow = document.createElement('div');
   axesRow.className = 'row';
