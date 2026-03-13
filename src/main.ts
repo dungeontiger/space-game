@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { loadUniverse, getSystems } from './spaceObjects.js';
 import { createAxesAndSphere, updateAxisLabelSizes } from './sceneAxes.js';
-import { getStarDistanceForMaxSizePx, updateSpaceScene, updateStarApparentSizes } from './spaceScene.js';
+import { getStarDistanceForMaxSizePx, updateSpaceScene, updateStarApparentSizes, setBoxSelectionHighlight } from './spaceScene.js';
 import { updateSelectionVisuals, updateSelectionMarkerRotation, updateSelectionLabelSizes } from './selection.js';
 import { initNavControls } from './ui.js';
 import type { System } from './spaceObjects.js';
@@ -42,6 +42,7 @@ let isBoxZoomDragging = false;
 let boxZoomStart = { x: 0, y: 0 };
 let boxZoomEnd = { x: 0, y: 0 };
 let controlsEnabledBeforeBoxZoom = true;
+const boxZoomSelectedIds = new Set<string>();
 
 const boxZoomOverlay = document.createElement('div');
 boxZoomOverlay.style.position = 'fixed';
@@ -68,25 +69,6 @@ function refreshSelectionVisuals(): void {
   const h = renderer.domElement.clientHeight;
   updateSelectionVisuals(selectionGroup, selectedIds, scene, systems, camera, h);
 }
-
-const cameraHelper = (() => {
-  const group = new THREE.Group();
-  group.visible = false;
-  const boxGeom = new THREE.BoxGeometry(0.8, 0.5, 0.8);
-  const edges = new THREE.EdgesGeometry(boxGeom);
-  const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x00ccff }));
-  group.add(line);
-  boxGeom.dispose();
-  const dirLength = 3;
-  const dirGeom = new THREE.BufferGeometry().setFromPoints([
-    new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(0, 0, dirLength),
-  ]);
-  const dirLine = new THREE.Line(dirGeom, new THREE.LineBasicMaterial({ color: 0xffaa00 }));
-  group.add(dirLine);
-  return group;
-})();
-scene.add(cameraHelper);
 
 let axesGroup: THREE.Group;
 let sphereMesh: THREE.Group;
@@ -185,54 +167,55 @@ function getSystemsInScreenBox(
 
   const v = new THREE.Vector3();
   const selected: System[] = [];
+
   for (const system of systems) {
     v.set(system.position.x, system.position.y, system.position.z);
     v.project(camera);
 
-    // Convert NDC [-1,1] back to screen pixels.
+    // Ignore systems outside the visible clip range.
+    if (v.z < -1 || v.z > 1) continue;
+
     const sx = rect.left + ((v.x + 1) / 2) * rect.width;
-    const sy = rect.top + ((1 - (v.y + 1) / 2) * rect.height);
+    const sy = rect.top + (1 - (v.y + 1) / 2) * rect.height;
 
     if (sx >= minX && sx <= maxX && sy >= minY && sy <= maxY) {
       selected.push(system);
     }
   }
+
   return selected;
 }
 
 function zoomSystemsToFit(systemsToFrame: System[]): void {
   if (systemsToFrame.length === 0) return;
+
   if (systemsToFrame.length === 1) {
     zoomToId(systemsToFrame[0].id);
     return;
   }
 
-  // Use 3D centroid of selected systems as target so the cluster is always centered.
-  const center = new THREE.Vector3(0, 0, 0);
+  const box = new THREE.Box3();
   for (const s of systemsToFrame) {
-    center.x += s.position.x;
-    center.y += s.position.y;
-    center.z += s.position.z;
-  }
-  center.multiplyScalar(1 / systemsToFrame.length);
-
-  let maxR = 0;
-  for (const s of systemsToFrame) {
-    const dx = s.position.x - center.x;
-    const dy = s.position.y - center.y;
-    const dz = s.position.z - center.z;
-    const d = Math.sqrt(dx * dx + dy * dy + dz * dz);
-    if (d > maxR) maxR = d;
+    box.expandByPoint(new THREE.Vector3(s.position.x, s.position.y, s.position.z));
   }
 
-  const fovRad = (camera.fov * Math.PI) / 180;
-  const sinHalfFov = Math.sin(fovRad * 0.5);
-  const distance = Math.max(0.0001, (maxR * 1.15) / Math.max(1e-6, sinHalfFov));
+  const sphere = box.getBoundingSphere(new THREE.Sphere());
+  const center = sphere.center.clone();
+  const radius = Math.max(sphere.radius, 1e-6);
+
+  const aspect = camera.aspect;
+  const vFov = THREE.MathUtils.degToRad(camera.fov);
+  const hFov = 2 * Math.atan(Math.tan(vFov / 2) * aspect);
+
+  const distV = radius / Math.tan(vFov / 2);
+  const distH = radius / Math.tan(hFov / 2);
+  const distance = Math.max(distV, distH) * 1.25;
 
   const viewDir = new THREE.Vector3()
     .subVectors(camera.position, controls.target)
     .normalize();
-  const desiredCamPos = new THREE.Vector3().copy(center).addScaledVector(viewDir, distance);
+
+  const desiredCamPos = center.clone().addScaledVector(viewDir, distance);
 
   animateCameraTo(center, desiredCamPos, 1800);
 }
@@ -240,36 +223,38 @@ function zoomSystemsToFit(systemsToFrame: System[]): void {
 function zoomViewToBox(x0: number, y0: number, x1: number, y1: number): void {
   const rect = canvas.getBoundingClientRect();
   const viewportWidth = rect.width;
-  const viewportHeight = renderer.domElement.clientHeight || rect.height;
+  const viewportHeight = rect.height;
   const boxHeight = Math.abs(y1 - y0);
   const boxWidth = Math.abs(x1 - x0);
-  if (boxHeight < 4 || boxWidth < 4 || viewportHeight <= 0) return;
+
+  if (boxHeight < 4 || boxWidth < 4 || viewportWidth <= 0 || viewportHeight <= 0) return;
 
   const scaleY = boxHeight / viewportHeight;
   const scaleX = boxWidth / viewportWidth;
-  const scale = Math.max(1e-3, Math.min(scaleX, scaleY));
+  const scale = Math.max(scaleX, scaleY);
 
   const currentDistance = controls.getDistance();
-  const newDistance = Math.max(0.0001, currentDistance * scale);
+  const MIN_BOX_ZOOM = controls.minDistance;
+  const newDistance = Math.max(MIN_BOX_ZOOM, currentDistance * scale * 1.08);
 
   const cx = (x0 + x1) * 0.5;
   const cy = (y0 + y1) * 0.5;
   const ndcX = ((cx - rect.left) / rect.width) * 2 - 1;
   const ndcY = -((cy - rect.top) / rect.height) * 2 + 1;
 
-  // Ray from camera through box center
-  const ndc = new THREE.Vector3(ndcX, ndcY, 0.5);
-  ndc.unproject(camera);
-  const rayDir = ndc.sub(camera.position).normalize();
+  const worldPoint = new THREE.Vector3(ndcX, ndcY, 0.5).unproject(camera);
+  const rayDir = worldPoint.sub(camera.position).normalize();
 
-  // Plane through the current target, perpendicular to the view direction
-  const viewDir = new THREE.Vector3().subVectors(controls.target, camera.position).normalize();
+  const viewDir = new THREE.Vector3()
+    .subVectors(controls.target, camera.position)
+    .normalize();
+
   const planePoint = controls.target.clone();
-  const planeNormal = viewDir;
+  const planeNormal = viewDir.clone();
   const denom = rayDir.dot(planeNormal);
 
   let newTarget = controls.target.clone();
-  if (Math.abs(denom) > 1e-4) {
+  if (Math.abs(denom) > 1e-6) {
     const t = planePoint.clone().sub(camera.position).dot(planeNormal) / denom;
     if (t > 0) {
       newTarget = camera.position.clone().addScaledVector(rayDir, t);
@@ -304,6 +289,10 @@ window.addEventListener('mouseup', (event: MouseEvent) => {
   const dy = Math.abs(boxZoomEnd.y - boxZoomStart.y);
   if (dx > 4 && dy > 4) {
     const inBox = getSystemsInScreenBox(boxZoomStart.x, boxZoomStart.y, boxZoomEnd.x, boxZoomEnd.y);
+    boxZoomSelectedIds.clear();
+    for (const s of inBox) boxZoomSelectedIds.add(s.id);
+    setBoxSelectionHighlight(boxZoomSelectedIds);
+
     if (inBox.length > 0) {
       zoomSystemsToFit(inBox);
     } else {
@@ -423,21 +412,17 @@ function focusOn(position: { x: number; y: number; z: number }): void {
   camera.position.copy(controls.target).addScaledVector(dir, dist);
 }
 
-let cameraHelperVisible = false;
-function setCameraHelperVisible(visible: boolean): void {
-  cameraHelperVisible = visible;
+/** Set camera distance from orbit target and sync controls so the zoom sticks. */
+function setZoomDistance(distance: number): void {
+  const target = controls.target;
+  const dir = new THREE.Vector3().subVectors(camera.position, target).normalize();
+  camera.position.copy(target).addScaledVector(dir, distance);
+  controls.update();
 }
 
 function animate(): void {
   requestAnimationFrame(animate);
   controls.update();
-  if (cameraHelperVisible) {
-    cameraHelper.visible = true;
-    cameraHelper.position.copy(camera.position);
-    cameraHelper.lookAt(controls.target);
-  } else {
-    cameraHelper.visible = false;
-  }
   const viewportHeight = renderer.domElement.clientHeight;
   updateStarApparentSizes(scene, camera, viewportHeight);
   if (axesVisible && axesGroup) updateAxisLabelSizes(axesGroup, camera, viewportHeight);
@@ -446,6 +431,7 @@ function animate(): void {
     updateSelectionLabelSizes(selectionGroup, camera, viewportHeight);
   }
   navApi.updateReadout(camera.position);
+
   renderer.render(scene, camera);
 }
 
@@ -466,12 +452,14 @@ async function init(): Promise<void> {
   const deselectAll = () => {
     selectedIds.clear();
     refreshSelectionVisuals();
+    boxZoomSelectedIds.clear();
+    setBoxSelectionHighlight(boxZoomSelectedIds);
   };
   navApi = initNavControls(
     camera,
     controls,
     systems,
-    setCameraHelperVisible,
+    setZoomDistance,
     setAxesVisible,
     setSphereVisible,
     deselectAll,
